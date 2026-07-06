@@ -1,0 +1,9 @@
+<svg width="220" height="40" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flimmerkanal">
+  <g>
+    <rect x="0" y="4" width="32" height="32" rx="7" fill="#141414"/>
+    <rect x="8" y="21" width="4.5" height="9" rx="1.8" fill="#E63946"/>
+    <rect x="14.5" y="15" width="4.5" height="15" rx="1.8" fill="#E63946"/>
+    <rect x="21" y="10" width="4.5" height="20" rx="1.8" fill="#E63946"/>
+  </g>
+  <text x="42" y="27" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="24" letter-spacing="0.5" fill="#FFFFFF" text-transform="uppercase">FLIMMER<tspan fill="#E63946">KANAL</tspan></text>
+</svg>
