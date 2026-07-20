@@ -224,7 +224,7 @@
 .mms-poster-overflow{overflow:hidden;border-radius:16px;mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);}
 .mms-poster-track{display:flex;gap:14px;width:max-content;animation:mms-poster-rtl 35s linear infinite;}
 @keyframes mms-poster-rtl{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-.mms-poster{flex:0 0 auto;width:170px;border-radius:14px;overflow:hidden;border:1px solid rgba(0,200,255,.15);box-shadow:0 8px 28px rgba(0,0,0,.5);background:rgba(255,255,255,.05);height:240px;display:flex;align-items:center;justify-content:center;}
+.mms-poster{flex:0 0 auto;width:160px;border-radius:14px;overflow:hidden;border:1px solid rgba(0,200,255,.18);box-shadow:0 8px 28px rgba(0,0,0,.6);background:rgba(255,255,255,.04);height:240px;display:flex;align-items:center;justify-content:center;}
 .mms-poster span{font-size:3rem;}
 @media(max-width:600px){.mms-stats{grid-template-columns:1fr;}.mms-stat{border-right:none;border-bottom:1px solid rgba(0,200,255,.1);}.mms-stat:last-child{border-bottom:none;}}
 </style>
@@ -269,15 +269,30 @@
   <!-- Poster carousel -->
   <div style="margin-top:28px;">
     <p style="text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.35);margin:0 0 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;">300.000+ Filme &amp; Serien</p>
-    <div class="mms-poster-overflow">
+        <div class="mms-poster-overflow">
       <div class="mms-poster-track">
-        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
-        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
-        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
-        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
-        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
-        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
+        <div class="mms-poster"><img src="/assets/poster-das-boot.jpg" alt="Das Boot 1981" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-metropolis.jpg" alt="Metropolis 1927" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-untergang.jpg" alt="Der Untergang 2004" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-lola-rennt.jpg" alt="Lola Rennt 1998" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-lives-others.jpg" alt="Das Leben der Anderen 2006" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-ich-bin.jpg" alt="Ich bin dein Mensch 2021" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-grosser.jpg" alt="Großer Schwarzer Riese 2022" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-sieben-winter.jpg" alt="Sieben Winter in Teheran 2023" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-roter-himmel.jpg" alt="Roter Himmel 2023" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-hilde.jpg" alt="In Liebe, Eure Hilde 2024" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-das-boot.jpg" alt="Das Boot 1981" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-metropolis.jpg" alt="Metropolis 1927" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-untergang.jpg" alt="Der Untergang 2004" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-lola-rennt.jpg" alt="Lola Rennt 1998" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-lives-others.jpg" alt="Das Leben der Anderen 2006" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-ich-bin.jpg" alt="Ich bin dein Mensch 2021" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-grosser.jpg" alt="Großer Schwarzer Riese 2022" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-sieben-winter.jpg" alt="Sieben Winter in Teheran 2023" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-roter-himmel.jpg" alt="Roter Himmel 2023" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
+        <div class="mms-poster"><img src="/assets/poster-hilde.jpg" alt="In Liebe, Eure Hilde 2024" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy"></div>
       </div>
+    </div>
     </div>
   </div>
   <div class="mms-stats">
