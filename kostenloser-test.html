@@ -270,8 +270,8 @@
       <div class="tf-check-circle">
         <svg class="tf-check-svg" viewBox="0 0 52 52"><polyline points="14,27 22,36 38,17"/></svg>
       </div>
-      <h2>Anfrage gesendet!</h2>
-      <p>Ihre <strong>IPTV Test Line</strong> wird Ihnen in wenigen Minuten per WhatsApp zugestellt.<br>Halten Sie Ihr Ger&auml;t bereit &ndash; der Test beginnt sofort.</p>
+      <h2>Zugangsdaten bereit!</h2>
+      <p>Ihre <strong>IPTV Test Line</strong> wurden sofort an Ihre E-Mail gesendet.<br>Bitte prüfen Sie Ihren Posteingang &ndash; schauen Sie auch in den <strong>Spam-Ordner</strong>.</p>
       <div class="tf-success-links">
         <a href="/seo/installationsanleitung.html" class="link-1">&#128216; Installationsanleitung</a>
         <a href="/preise.html" class="link-2">&#128203; Pakete ansehen</a>
@@ -519,7 +519,7 @@
 <div id="fk-footer-placeholder"></div>
 
 <script>
-function submitTrial(e) {
+async function submitTrial(e) {
   e.preventDefault();
   var btn = document.getElementById('tf-btn');
   var err = document.getElementById('tf-err');
@@ -527,7 +527,7 @@ function submitTrial(e) {
   var success = document.getElementById('tf-success');
 
   btn.disabled = true;
-  btn.textContent = 'Wird gesendet\u2026';
+  btn.textContent = 'Wird gesendet…';
   err.style.display = 'none';
 
   function gv(id) {
@@ -537,7 +537,7 @@ function submitTrial(e) {
   }
   function reset(msg) {
     btn.disabled = false;
-    btn.textContent = '\uD83D\uDCF7 IPTV Test Line anfordern \u2192';
+    btn.textContent = '📷 IPTV Test Line anfordern →';
     err.textContent = msg;
     err.style.display = 'block';
   }
@@ -545,25 +545,30 @@ function submitTrial(e) {
   var name = gv('tf-name');
   var email = gv('tf-email');
   if (!name) { reset('Bitte geben Sie Ihren Namen ein.'); return; }
-  if (!email || !email.includes('@')) { reset('Bitte geben Sie eine g\u00fcltige E-Mail-Adresse ein.'); return; }
+  if (!email || !email.includes('@')) { reset('Bitte geben Sie eine gültige E-Mail-Adresse ein.'); return; }
 
-  var country = gv('tf-country');
-  var wa = gv('tf-whatsapp');
-  var device = gv('tf-device');
-  var notes = gv('tf-notes');
-
-  var parts = ['24h IPTV Test Anfrage (FlimmerKanal)','Name: ' + name,'E-Mail: ' + email];
-  if (country) parts.push('Land: ' + country);
-  if (wa) parts.push('WhatsApp: ' + wa);
-  if (device) parts.push('Ger\u00e4t: ' + device);
-  if (notes) parts.push('Hinweis: ' + notes);
-  var waMsg = parts.join('\n');
-
-  window.open('/kontakt/chat?msg=' + encodeURIComponent(waMsg), '_blank', 'noopener,noreferrer');
-
-  formArea.style.display = 'none';
-  success.style.display = 'block';
-  success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  try {
+    var res = await fetch('https://iptv-trial-flimmerkanal.medmaar.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name:     name,
+        email:    email,
+        whatsapp: gv('tf-whatsapp'),
+        country:  gv('tf-country'),
+        device:   gv('tf-device'),
+        notes:    gv('tf-notes'),
+      })
+    });
+    var data = await res.json();
+    if (!res.ok || !data.success) throw new Error(data.error || 'Unbekannter Fehler');
+    formArea.style.display = 'none';
+    success.style.display = 'block';
+    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (ex) {
+    reset('Fehler beim Senden. Bitte erneut versuchen oder kontaktieren Sie uns: kontakt@flimmerkanal.de');
+    console.error(ex);
+  }
 }
 
 document.querySelectorAll('.tf-faq-q').forEach(function(q) {
@@ -579,3 +584,4 @@ document.querySelectorAll('.tf-faq-q').forEach(function(q) {
 <script src="/assets/main.js"></script>
 </body>
 </html>
+
