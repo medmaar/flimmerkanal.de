@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FlimmerKanal – IPTV Deutschland | 20.000+ Sender in HD & 4K</title>
-<meta name="description" content="FlimmerKanal ist Ihr IPTV Anbieter für Deutschland. 20.000+ Live-Sender in HD & 4K, 100.000+ Filme und Serien, Bundesliga, Champions League und mehr. Kostenlos testen.">
+<title>FlimmerKanal – IPTV Deutschland | 50.000+ Sender in HD & 4K</title>
+<meta name="description" content="FlimmerKanal ist Ihr IPTV Anbieter für Deutschland. 50.000+ Live-Sender in HD & 4K, 300.000+ Filme und Serien, Bundesliga, Champions League und mehr. Kostenlos testen.">
 <link rel="alternate" hreflang="de" href="https://www.flimmerkanal.de/">
 <link rel="alternate" hreflang="x-default" href="https://www.flimmerkanal.de/">
 <link rel="canonical" href="https://www.flimmerkanal.de/">
-<meta property="og:title" content="FlimmerKanal – IPTV Deutschland | 20.000+ Sender in HD & 4K">
-<meta property="og:description" content="20.000+ Live-Sender, 100.000+ Filme & Serien. Bundesliga, UCL, Formel 1. Ab 9€/Monat. Kostenlos testen.">
+<meta property="og:title" content="FlimmerKanal – IPTV Deutschland | 50.000+ Sender in HD & 4K">
+<meta property="og:description" content="50.000+ Live-Sender, 300.000+ Filme & Serien. Bundesliga, UCL, Formel 1. Ab 9€/Monat. Kostenlos testen.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.flimmerkanal.de/">
 <meta property="og:image" content="https://www.flimmerkanal.de/assets/og-default.jpg">
@@ -21,28 +21,29 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"FlimmerKanal IPTV Abo","description":"Premium IPTV Service mit 20.000+ Live-Sendern und 100.000+ VOD-Titeln. Pläne ab 9€/Monat.","brand":{"@type":"Brand","name":"FlimmerKanal"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"248","bestRating":"5","worstRating":"1"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"FlimmerKanal IPTV Abo","description":"Premium IPTV Service mit 50.000+ Live-Sendern und 300.000+ VOD-Titeln. Pläne ab 9€/Monat.","brand":{"@type":"Brand","name":"FlimmerKanal"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"248","bestRating":"5","worstRating":"1"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"FlimmerKanal – IPTV Deutschland","url":"https://www.flimmerkanal.de","inLanguage":"de-DE","dateModified":"2026-07-20","publisher":{"@type":"Organization","name":"FlimmerKanal","url":"https://www.flimmerkanal.de"}}</script>
 <style>
 /* ── Hero ── */
-.fk-hero-section{background:linear-gradient(135deg,#0a0414 0%,#140c28 60%,#0a0414 100%);padding:0 24px 0;}
-.fk-hero-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;min-height:calc(100vh - 80px);}
-.fk-hero-brand-title{font-size:clamp(2.2rem,4.5vw,4rem);font-weight:800;line-height:1;letter-spacing:-.02em;color:#fff;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;display:block;margin:0 0 8px;}
-.fk-hero-animated h1{font-size:clamp(3rem,7vw,5.5rem);font-weight:900;line-height:.9;letter-spacing:-.03em;color:#fd0322;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;margin:0 0 24px;}
-.fk-hero-animated h1 .word{display:none;}.fk-hero-animated h1 .word.active{display:block;}
-.fk-hero-bullets{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:10px;}
-.fk-hero-bullets li{display:flex;align-items:center;gap:10px;color:#fff;font-size:.97rem;font-weight:500;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-.fk-hero-bullets li span.dot{width:8px;height:8px;border-radius:50%;background:#fd0322;display:inline-block;flex-shrink:0;}
+.fk-hero-section{position:relative;overflow:hidden;min-height:calc(100vh - 80px);display:flex;align-items:center;}
+.fk-hero-bg{position:absolute;inset:0;z-index:0;}
+.fk-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.fk-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,4,20,.92) 0%,rgba(10,4,20,.75) 45%,rgba(10,4,20,.15) 100%);}
+.fk-hero-inner{max-width:1060px;margin:0 auto;padding:80px 24px;position:relative;z-index:1;width:100%;}
+.fk-hero-content{max-width:580px;}
+.fk-hero-live-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(253,3,34,.15);border:1px solid rgba(253,3,34,.4);border-radius:30px;padding:6px 16px;font-size:.72rem;font-weight:800;color:#fd0322;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;}
+.fk-hero-live-dot{width:7px;height:7px;border-radius:50%;background:#fd0322;animation:fk-pulse 1.4s ease-in-out infinite;flex-shrink:0;}
+.fk-hero-animated h1{font-size:clamp(3rem,7vw,5.5rem);font-weight:900;line-height:.92;letter-spacing:-.03em;color:#fd0322;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;margin:0 0 8px;}
+.fk-hero-subtitle{font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:700;color:rgba(255,255,255,.85);margin:0 0 28px;line-height:1.3;}
+.fk-hero-bullets{list-style:none;padding:0;margin:0 0 36px;display:flex;flex-direction:column;gap:10px;}
+.fk-hero-bullets li{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:.95rem;font-weight:500;}
+.fk-hero-bullets li span.dot{width:7px;height:7px;border-radius:50%;background:#fd0322;display:inline-block;flex-shrink:0;}
 .fk-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
-/* Hero visual cards */
-.fk-hero-visual{display:grid;grid-template-rows:repeat(3,1fr);gap:14px;height:400px;}
-.fk-hero-card{border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;overflow:hidden;position:relative;}
-.fk-hero-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(253,3,34,.08),transparent);}
-.fk-hero-card-label{position:relative;z-index:1;display:flex;align-items:center;gap:12px;padding:0 20px;}
-.fk-hero-card-label span{font-size:.85rem;font-weight:700;color:rgba(232,224,255,.8);font-family:'Plus Jakarta Sans','DM Sans',sans-serif;}
-@media(max-width:768px){.fk-hero-inner{grid-template-columns:1fr;min-height:auto;padding:60px 0 20px;}.fk-hero-visual{display:none;}}
-/* Shine text animation */
-@keyframes fk-word-cycle{0%,25%{opacity:1;}30%,100%{opacity:0;}}
+@media(max-width:768px){
+  .fk-hero-section{min-height:auto;}
+  .fk-hero-bg::after{background:linear-gradient(180deg,rgba(10,4,20,.7) 0%,rgba(10,4,20,.92) 60%);}
+  .fk-hero-inner{padding:60px 20px 48px;}
+}
 </style>
 </head>
 <body>
@@ -60,8 +61,8 @@
         <h1 id="heroWord">LIVE TV</h1>
       </div>
       <ul class="fk-hero-bullets">
-        <li><span class="dot"></span> 20.000+ Live-Sender – HD &amp; 4K</li>
-        <li><span class="dot"></span> 100.000+ Filme &amp; Serien auf Abruf</li>
+        <li><span class="dot"></span> 50.000+ Live-Sender – HD &amp; 4K</li>
+        <li><span class="dot"></span> 300.000+ Filme &amp; Serien auf Abruf</li>
         <li><span class="dot"></span> Premium Sport – Bundesliga, UCL, Formel 1</li>
         <li><span class="dot"></span> Auf allen Geräten – kein Vertrag</li>
       </ul>
@@ -73,7 +74,7 @@
     <div class="fk-hero-visual">
       <div class="fk-hero-card"><div class="fk-hero-card-label">🟥 <span>ARD · ZDF · RTL · ProSieben</span></div></div>
       <div class="fk-hero-card"><div class="fk-hero-card-label">⚽ <span>Bundesliga · Champions League</span></div></div>
-      <div class="fk-hero-card"><div class="fk-hero-card-label">🎬 <span>100.000+ Filme &amp; Serien</span></div></div>
+      <div class="fk-hero-card"><div class="fk-hero-card-label">🎬 <span>300.000+ Filme &amp; Serien</span></div></div>
     </div>
   </div>
 </section>
@@ -114,7 +115,7 @@
 </style>
 <div class="mss-inner">
   <div style="text-align:center;padding:70px 0 44px;">
-    <div class="section-kicker dot">Live jetzt – 20.000+ Sender</div>
+    <div class="section-kicker dot">Live jetzt – 50.000+ Sender</div>
     <h2 style="font-size:clamp(4rem,11vw,9.5rem);font-weight:900;line-height:.9;letter-spacing:-.02em;margin:0 auto 22px;background:linear-gradient(135deg,#ff2244 0%,#ff6030 40%,#fff 70%,#ff2244 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fk-shine 4s linear infinite;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;text-transform:uppercase;">Live Sport</h2>
   </div>
 
@@ -170,7 +171,7 @@
       <div style="text-align:center;">
         <div style="font-size:5rem;margin-bottom:16px;">⚽</div>
         <p style="color:rgba(255,255,255,.5);font-size:1rem;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;">Live Sport – Bundesliga · UCL · Formel 1</p>
-        <p style="color:rgba(255,255,255,.3);font-size:.82rem;margin-top:8px;">20.000+ Sender in HD &amp; 4K</p>
+        <p style="color:rgba(255,255,255,.3);font-size:.82rem;margin-top:8px;">50.000+ Sender in HD &amp; 4K</p>
       </div>
     </div>
     <div class="mss-live-badge"><span class="mss-live-dot"></span> LIVE SPORT</div>
@@ -265,15 +266,15 @@
 <div style="max-width:1060px;margin:0 auto;padding:0 24px;">
   <!-- Poster carousel -->
   <div style="margin-top:28px;">
-    <p style="text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.35);margin:0 0 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;">100.000+ Filme &amp; Serien</p>
+    <p style="text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.35);margin:0 0 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;">300.000+ Filme &amp; Serien</p>
     <div class="mms-poster-overflow">
       <div class="mms-poster-track">
-        <div class="mms-poster"><span>🎬</span></div><div class="mms-poster"><span>🎥</span></div><div class="mms-poster"><span>🍿</span></div>
-        <div class="mms-poster"><span>🎞️</span></div><div class="mms-poster"><span>📽️</span></div><div class="mms-poster"><span>🎭</span></div>
-        <div class="mms-poster"><span>🦸</span></div><div class="mms-poster"><span>👻</span></div>
-        <div class="mms-poster"><span>🎬</span></div><div class="mms-poster"><span>🎥</span></div><div class="mms-poster"><span>🍿</span></div>
-        <div class="mms-poster"><span>🎞️</span></div><div class="mms-poster"><span>📽️</span></div><div class="mms-poster"><span>🎭</span></div>
-        <div class="mms-poster"><span>🦸</span></div><div class="mms-poster"><span>👻</span></div>
+        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
+        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
+        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
+        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
+        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
+        <div class="mms-poster"><span></span></div><div class="mms-poster"><span></span></div>
       </div>
     </div>
   </div>
@@ -301,50 +302,50 @@
 .mds-item span{font-size:.85rem;font-weight:800;color:#111;white-space:nowrap;}
 </style>
 <div style="max-width:1060px;margin:0 auto;padding:0 24px;">
-  <div class="section-kicker" style="display:inline-flex;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.3);color:#fd0322;">📱 Universelle Kompatibilität</div>
+  <div class="section-kicker" style="display:inline-flex;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.3);color:#fd0322;">Universelle Kompatibilität</div>
   <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:14px;">Auf allen Geräten</h2>
   <p style="font-size:.97rem;color:rgba(232,224,255,.6);line-height:1.8;max-width:640px;margin:0 auto 44px;">Keine neue Hardware nötig. FlimmerKanal läuft auf allem, was Sie bereits besitzen – Smartphone, Smart TV, Tablet, Box und Computer. In wenigen Minuten eingerichtet, auf jedem Bildschirm genießen.</p>
 </div>
 <div style="overflow:hidden;padding:0;">
   <div class="mds-wrap-2">
     <div class="mds-track-2">
-      <div class="mds-item"><span>🔥 Fire TV Stick</span></div>
-      <div class="mds-item"><span>📱 iPhone &amp; iPad</span></div>
-      <div class="mds-item"><span>🤖 Android</span></div>
-      <div class="mds-item"><span>📺 Samsung Smart TV</span></div>
-      <div class="mds-item"><span>📺 LG Smart TV</span></div>
-      <div class="mds-item"><span>🍎 Apple TV</span></div>
-      <div class="mds-item"><span>📺 Android TV</span></div>
-      <div class="mds-item"><span>🖥️ Windows &amp; Mac</span></div>
-      <div class="mds-item"><span>🛡️ NVIDIA Shield</span></div>
-      <div class="mds-item"><span>📦 MAG Box</span></div>
-      <div class="mds-item"><span>🎮 Xbox</span></div>
-      <div class="mds-item"><span>🌐 Browser</span></div>
+      <div class="mds-item"><span>Fire TV Stick</span></div>
+      <div class="mds-item"><span>iPhone &amp; iPad</span></div>
+      <div class="mds-item"><span>Android</span></div>
+      <div class="mds-item"><span>Samsung Smart TV</span></div>
+      <div class="mds-item"><span>LG Smart TV</span></div>
+      <div class="mds-item"><span>Apple TV</span></div>
+      <div class="mds-item"><span>Android TV</span></div>
+      <div class="mds-item"><span>Windows &amp; Mac</span></div>
+      <div class="mds-item"><span>NVIDIA Shield</span></div>
+      <div class="mds-item"><span>MAG Box</span></div>
+      <div class="mds-item"><span>Xbox</span></div>
+      <div class="mds-item"><span>Browser</span></div>
       <!-- dup -->
-      <div class="mds-item"><span>🔥 Fire TV Stick</span></div>
-      <div class="mds-item"><span>📱 iPhone &amp; iPad</span></div>
-      <div class="mds-item"><span>🤖 Android</span></div>
-      <div class="mds-item"><span>📺 Samsung Smart TV</span></div>
-      <div class="mds-item"><span>📺 LG Smart TV</span></div>
-      <div class="mds-item"><span>🍎 Apple TV</span></div>
-      <div class="mds-item"><span>📺 Android TV</span></div>
-      <div class="mds-item"><span>🖥️ Windows &amp; Mac</span></div>
-      <div class="mds-item"><span>🛡️ NVIDIA Shield</span></div>
-      <div class="mds-item"><span>📦 MAG Box</span></div>
-      <div class="mds-item"><span>🎮 Xbox</span></div>
-      <div class="mds-item"><span>🌐 Browser</span></div>
+      <div class="mds-item"><span>Fire TV Stick</span></div>
+      <div class="mds-item"><span>iPhone &amp; iPad</span></div>
+      <div class="mds-item"><span>Android</span></div>
+      <div class="mds-item"><span>Samsung Smart TV</span></div>
+      <div class="mds-item"><span>LG Smart TV</span></div>
+      <div class="mds-item"><span>Apple TV</span></div>
+      <div class="mds-item"><span>Android TV</span></div>
+      <div class="mds-item"><span>Windows &amp; Mac</span></div>
+      <div class="mds-item"><span>NVIDIA Shield</span></div>
+      <div class="mds-item"><span>MAG Box</span></div>
+      <div class="mds-item"><span>Xbox</span></div>
+      <div class="mds-item"><span>Browser</span></div>
     </div>
   </div>
 </div>
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:28px 24px 36px;">
-  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">🔥 Fire TV &amp; Firestick</span>
-  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">📺 Samsung &amp; LG Smart TV</span>
-  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">🍎 iPhone &amp; iPad</span>
-  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">🤖 Android Phone &amp; Tablet</span>
-  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">🎮 Xbox</span>
-  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">📦 MAG &amp; Infomir Boxen</span>
-  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">🌐 Browser</span>
-  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">📡 Jeder M3U Player</span>
+  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">Fire TV &amp; Firestick</span>
+  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">Samsung &amp; LG Smart TV</span>
+  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">iPhone &amp; iPad</span>
+  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">Android Phone &amp; Tablet</span>
+  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">Xbox</span>
+  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">MAG &amp; Infomir Boxen</span>
+  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">Browser</span>
+  <span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 18px;font-size:.8rem;font-weight:600;color:rgba(232,224,255,.75);">Jeder M3U Player</span>
 </div>
 <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
   <a href="/preise.html" class="btn-red">Jetzt starten →</a>
@@ -548,10 +549,10 @@
     </div></div>
   </div>
   <div class="fk-pricing-grid">
-    <div class="fk-card"><div class="fk-card-top"><p class="fk-card-dur">1 Monat</p><div class="fk-card-price" id="price-1monat">9€</div><p class="fk-card-per" id="per-1monat">für 1 Gerät</p></div><ul class="fk-card-feats"><li class="fk-card-feat"><span class="ck">✓</span>4K Qualität</li><li class="fk-card-feat"><span class="ck">✓</span>Bundesliga, UCL, Formel 1</li><li class="fk-card-feat"><span class="ck">✓</span>PPV, Boxen, UFC</li><li class="fk-card-feat"><span class="ck">✓</span>20.000+ Sender</li><li class="fk-card-feat"><span class="ck">✓</span>100.000+ Filme &amp; Serien</li><li class="fk-card-feat"><span class="ck">✓</span>EPG &amp; Catch-up TV</li><li class="fk-card-feat"><span class="ck">✓</span>Alle Geräte</li></ul><a class="fk-card-btn" id="btn-1monat" href="/plan/iptv-1-monat-1-verbindung.html">Jetzt bestellen →</a></div>
-    <div class="fk-card"><div class="fk-card-top"><p class="fk-card-dur">3 Monate</p><div class="fk-card-price" id="price-3monate">25€</div><p class="fk-card-per" id="per-3monate">für 1 Gerät</p></div><ul class="fk-card-feats"><li class="fk-card-feat"><span class="ck">✓</span>4K Qualität</li><li class="fk-card-feat"><span class="ck">✓</span>Bundesliga, UCL, Formel 1</li><li class="fk-card-feat"><span class="ck">✓</span>PPV, Boxen, UFC</li><li class="fk-card-feat"><span class="ck">✓</span>20.000+ Sender</li><li class="fk-card-feat"><span class="ck">✓</span>100.000+ Filme &amp; Serien</li><li class="fk-card-feat"><span class="ck">✓</span>EPG &amp; Catch-up TV</li><li class="fk-card-feat"><span class="ck">✓</span>Alle Geräte</li></ul><a class="fk-card-btn" id="btn-3monate" href="/plan/iptv-3-monate-1-verbindung.html">Jetzt bestellen →</a></div>
-    <div class="fk-card"><div class="fk-card-top"><p class="fk-card-dur">6 Monate</p><div class="fk-card-price" id="price-6monate">35€</div><p class="fk-card-per" id="per-6monate">für 1 Gerät</p></div><ul class="fk-card-feats"><li class="fk-card-feat"><span class="ck">✓</span>4K Qualität</li><li class="fk-card-feat"><span class="ck">✓</span>Bundesliga, UCL, Formel 1</li><li class="fk-card-feat"><span class="ck">✓</span>PPV, Boxen, UFC</li><li class="fk-card-feat"><span class="ck">✓</span>20.000+ Sender</li><li class="fk-card-feat"><span class="ck">✓</span>100.000+ Filme &amp; Serien</li><li class="fk-card-feat"><span class="ck">✓</span>EPG &amp; Catch-up TV</li><li class="fk-card-feat"><span class="ck">✓</span>Alle Geräte</li></ul><a class="fk-card-btn" id="btn-6monate" href="/plan/iptv-6-monate-1-verbindung.html">Jetzt bestellen →</a></div>
-    <div class="fk-card featured"><div class="fk-card-badge">⭐ BESTES ANGEBOT</div><div class="fk-card-top"><p class="fk-card-dur">1 Jahr</p><div class="fk-card-price" id="price-1jahr">45€</div><p class="fk-card-per" id="per-1jahr">für 1 Gerät</p></div><ul class="fk-card-feats"><li class="fk-card-feat fk-ibo"><span class="st">⭐</span><strong>IBO Player Abo gratis</strong></li><li class="fk-card-feat"><span class="ck">✓</span>4K Qualität</li><li class="fk-card-feat"><span class="ck">✓</span>Bundesliga, UCL, Formel 1</li><li class="fk-card-feat"><span class="ck">✓</span>PPV, Boxen, UFC</li><li class="fk-card-feat"><span class="ck">✓</span>20.000+ Sender</li><li class="fk-card-feat"><span class="ck">✓</span>100.000+ Filme &amp; Serien</li><li class="fk-card-feat"><span class="ck">✓</span>EPG &amp; Catch-up TV</li><li class="fk-card-feat"><span class="ck">✓</span>Alle Geräte</li></ul><a class="fk-card-btn" id="btn-1jahr" href="/plan/iptv-12-monate-1-verbindung.html">Jetzt bestellen →</a></div>
+    <div class="fk-card"><div class="fk-card-top"><p class="fk-card-dur">1 Monat</p><div class="fk-card-price" id="price-1monat">9€</div><p class="fk-card-per" id="per-1monat">für 1 Gerät</p></div><ul class="fk-card-feats"><li class="fk-card-feat"><span class="ck">✓</span>4K Qualität</li><li class="fk-card-feat"><span class="ck">✓</span>Bundesliga, UCL, Formel 1</li><li class="fk-card-feat"><span class="ck">✓</span>PPV, Boxen, UFC</li><li class="fk-card-feat"><span class="ck">✓</span>50.000+ Sender</li><li class="fk-card-feat"><span class="ck">✓</span>300.000+ Filme &amp; Serien</li><li class="fk-card-feat"><span class="ck">✓</span>EPG &amp; Catch-up TV</li><li class="fk-card-feat"><span class="ck">✓</span>Alle Geräte</li></ul><a class="fk-card-btn" id="btn-1monat" href="/plan/iptv-1-monat-1-verbindung.html">Jetzt bestellen →</a></div>
+    <div class="fk-card"><div class="fk-card-top"><p class="fk-card-dur">3 Monate</p><div class="fk-card-price" id="price-3monate">25€</div><p class="fk-card-per" id="per-3monate">für 1 Gerät</p></div><ul class="fk-card-feats"><li class="fk-card-feat"><span class="ck">✓</span>4K Qualität</li><li class="fk-card-feat"><span class="ck">✓</span>Bundesliga, UCL, Formel 1</li><li class="fk-card-feat"><span class="ck">✓</span>PPV, Boxen, UFC</li><li class="fk-card-feat"><span class="ck">✓</span>50.000+ Sender</li><li class="fk-card-feat"><span class="ck">✓</span>300.000+ Filme &amp; Serien</li><li class="fk-card-feat"><span class="ck">✓</span>EPG &amp; Catch-up TV</li><li class="fk-card-feat"><span class="ck">✓</span>Alle Geräte</li></ul><a class="fk-card-btn" id="btn-3monate" href="/plan/iptv-3-monate-1-verbindung.html">Jetzt bestellen →</a></div>
+    <div class="fk-card"><div class="fk-card-top"><p class="fk-card-dur">6 Monate</p><div class="fk-card-price" id="price-6monate">35€</div><p class="fk-card-per" id="per-6monate">für 1 Gerät</p></div><ul class="fk-card-feats"><li class="fk-card-feat"><span class="ck">✓</span>4K Qualität</li><li class="fk-card-feat"><span class="ck">✓</span>Bundesliga, UCL, Formel 1</li><li class="fk-card-feat"><span class="ck">✓</span>PPV, Boxen, UFC</li><li class="fk-card-feat"><span class="ck">✓</span>50.000+ Sender</li><li class="fk-card-feat"><span class="ck">✓</span>300.000+ Filme &amp; Serien</li><li class="fk-card-feat"><span class="ck">✓</span>EPG &amp; Catch-up TV</li><li class="fk-card-feat"><span class="ck">✓</span>Alle Geräte</li></ul><a class="fk-card-btn" id="btn-6monate" href="/plan/iptv-6-monate-1-verbindung.html">Jetzt bestellen →</a></div>
+    <div class="fk-card featured"><div class="fk-card-badge">⭐ BESTES ANGEBOT</div><div class="fk-card-top"><p class="fk-card-dur">1 Jahr</p><div class="fk-card-price" id="price-1jahr">45€</div><p class="fk-card-per" id="per-1jahr">für 1 Gerät</p></div><ul class="fk-card-feats"><li class="fk-card-feat fk-ibo"><span class="st">⭐</span><strong>IBO Player Abo gratis</strong></li><li class="fk-card-feat"><span class="ck">✓</span>4K Qualität</li><li class="fk-card-feat"><span class="ck">✓</span>Bundesliga, UCL, Formel 1</li><li class="fk-card-feat"><span class="ck">✓</span>PPV, Boxen, UFC</li><li class="fk-card-feat"><span class="ck">✓</span>50.000+ Sender</li><li class="fk-card-feat"><span class="ck">✓</span>300.000+ Filme &amp; Serien</li><li class="fk-card-feat"><span class="ck">✓</span>EPG &amp; Catch-up TV</li><li class="fk-card-feat"><span class="ck">✓</span>Alle Geräte</li></ul><a class="fk-card-btn" id="btn-1jahr" href="/plan/iptv-12-monate-1-verbindung.html">Jetzt bestellen →</a></div>
   </div>
 </div>
 </section>
@@ -575,9 +576,9 @@
     <p style="color:rgba(232,224,255,.5);font-size:.9rem;">Alles, was Sie über FlimmerKanal wissen müssen</p>
   </div>
   <div id="faqList">
-    <div class="fk-faq-item open"><button class="fk-faq-q">Was ist FlimmerKanal und was wird angeboten? <span class="fk-faq-icon">+</span></button><div class="fk-faq-a"><div class="fk-faq-a-inner">FlimmerKanal ist ein Premium-IPTV-Service mit sofortigem Zugang zu 20.000+ Live-Sendern, 100.000+ Filmen &amp; Serien auf Abruf und Premium-Sport-PPV – alles in HD und 4K. Pakete starten ab 9€/Monat ohne Vertragsbindung.</div></div></div>
+    <div class="fk-faq-item open"><button class="fk-faq-q">Was ist FlimmerKanal und was wird angeboten? <span class="fk-faq-icon">+</span></button><div class="fk-faq-a"><div class="fk-faq-a-inner">FlimmerKanal ist ein Premium-IPTV-Service mit sofortigem Zugang zu 50.000+ Live-Sendern, 300.000+ Filmen &amp; Serien auf Abruf und Premium-Sport-PPV – alles in HD und 4K. Pakete starten ab 9€/Monat ohne Vertragsbindung.</div></div></div>
     <div class="fk-faq-item"><button class="fk-faq-q">Welche Bild- und Tonqualität bieten Sie? <span class="fk-faq-icon">+</span></button><div class="fk-faq-a"><div class="fk-faq-a-inner">Wir streamen in SD, HD, Full HD und bis zu 4K Ultra HD. Die meisten Premium-Sportkanäle und großen Live-Events senden in Full HD oder 4K, wo verfügbar – Kinoqualität bequem im Wohnzimmer.</div></div></div>
-    <div class="fk-faq-item"><button class="fk-faq-q">Welche Sender und Inhalte sind verfügbar? <span class="fk-faq-icon">+</span></button><div class="fk-faq-a"><div class="fk-faq-a-inner">Sie erhalten 20.000+ Live-Sender aus Deutschland, Europa und aller Welt, plus 100.000+ Filme und Serien auf Abruf – einschließlich neuer 2026-Titel. Jedes Paket beinhaltet auch Premium-Sportpakete (Bundesliga, Champions League, Formel 1, UFC, PPV), EPG-Programmführer und Catch-up TV.</div></div></div>
+    <div class="fk-faq-item"><button class="fk-faq-q">Welche Sender und Inhalte sind verfügbar? <span class="fk-faq-icon">+</span></button><div class="fk-faq-a"><div class="fk-faq-a-inner">Sie erhalten 50.000+ Live-Sender aus Deutschland, Europa und aller Welt, plus 300.000+ Filme und Serien auf Abruf – einschließlich neuer 2026-Titel. Jedes Paket beinhaltet auch Premium-Sportpakete (Bundesliga, Champions League, Formel 1, UFC, PPV), EPG-Programmführer und Catch-up TV.</div></div></div>
     <div class="fk-faq-item"><button class="fk-faq-q">Sind Sport- und PPV-Events in allen Paketen enthalten? <span class="fk-faq-icon">+</span></button><div class="fk-faq-a"><div class="fk-faq-a-inner">Ja. Jedes Paket enthält Bundesliga, Champions League, Formel 1, UFC, Boxen, NBA, NHL und mehr. PPV- und große Sondersendungen sind in allen Abonnements ohne Aufpreis enthalten – keine Add-ons nötig.</div></div></div>
     <div class="fk-faq-item"><button class="fk-faq-q">Mit welchen Geräten ist FlimmerKanal kompatibel? <span class="fk-faq-icon">+</span></button><div class="fk-faq-a"><div class="fk-faq-a-inner">FlimmerKanal läuft auf praktisch jedem Gerät: Amazon Firestick &amp; Fire TV, Samsung und LG Smart TVs, Android TV-Boxen, Apple TV, iPhone, iPad, Android-Smartphones, Windows-PC, Mac, MAG-Boxen, NVIDIA Shield und mehr. Kontaktieren Sie uns über WhatsApp, wenn Sie sich bei der Gerätekompatibilität nicht sicher sind.</div></div></div>
     <div class="fk-faq-item"><button class="fk-faq-q">Wie funktioniert die Einrichtung und Installation? <span class="fk-faq-icon">+</span></button><div class="fk-faq-a"><div class="fk-faq-a-inner">Nach Bestätigung Ihrer Bestellung erhalten Sie Ihre Anmeldedaten per E-Mail in wenigen Minuten, plus eine schrittweise Konfigurationsanleitung für Ihr Gerät. Unser WhatsApp-Support-Team ist 24/7 verfügbar, um Sie durch die Einrichtung zu führen – die meisten Kunden sind in unter 10 Minuten startklar.</div></div></div>
