@@ -10,8 +10,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -41,6 +39,19 @@ jobs:
             -F "metadata=${METADATA};type=application/json" \
             -F "worker.js=@worker/worker.js;type=application/javascript+module"
 
+      - name: Store Resend key as CF Worker Secret
+        env:
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
+          WORKER_NAME: iptv-trial-flimmerkanal
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          curl -s -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}/secrets" \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "{\"name\":\"RESEND_KEY\",\"text\":\"${RESEND_API_KEY}\",\"type\":\"secret_text\"}"
+
       - name: Enable workers.dev subdomain
         env:
           CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
@@ -64,23 +75,3 @@ jobs:
             -H "Authorization: Bearer ${CF_TOKEN}" \
             -H "Content-Type: application/json" \
             -d '[{"cron": "0 * * * *"}]'
-
-      - name: Test Resend API key directly
-        run: |
-          mkdir -p .debug
-          echo "=== Resend key test ===" > .debug/resend_test.txt
-          curl -s -X POST "https://api.resend.com/emails" \
-            -H "Authorization: Bearer re_cyvLJiXk_2RT16EyM7wNSj3zGPsgW9UjW" \
-            -H "Content-Type: application/json" \
-            -d '{"from":"FlimmerKanal <kontakt@flimmerkanal.de>","to":"elmaaroufi.md@gmail.com","subject":"Test","html":"<p>Test</p>"}' \
-            >> .debug/resend_test.txt
-          echo "" >> .debug/resend_test.txt
-          cat .debug/resend_test.txt
-
-      - name: Commit result
-        run: |
-          git config user.name bot
-          git config user.email bot@example.com
-          git add .debug/resend_test.txt
-          git commit -m "debug: resend key test" || true
-          git push || true
