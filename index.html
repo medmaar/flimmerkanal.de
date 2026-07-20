@@ -104,7 +104,7 @@
 .mss-fb-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px 12px;border-right:1px solid rgba(255,255,255,.08);transition:background .2s;}
 .mss-fb-item:last-child{border-right:none;}
 .mss-fb-item:hover{background:rgba(253,3,34,.06);}
-.mss-fb-icon{color:#fd0322;font-size:1.6rem;}
+.mss-fb-icon{display:flex;align-items:center;justify-content:center;height:48px;}
 .mss-fb-label{font-size:.82rem;font-weight:800;color:#fff;white-space:nowrap;}
 .mss-ticker-wrap{width:100%;max-width:960px;margin:0 auto 40px;overflow:hidden;padding:16px 0 4px;mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);}
 .mss-ticker-track{display:flex;width:max-content;animation:fk-scroll 22s linear infinite;}
@@ -160,10 +160,10 @@
 
   <!-- Feature bar + Video -->
   <div class="mss-feat-bar">
-    <div class="mss-fb-item"><div class="mss-fb-icon">⚽</div><div class="mss-fb-label">Bundesliga</div></div>
-    <div class="mss-fb-item"><div class="mss-fb-icon">🏆</div><div class="mss-fb-label">Champions League</div></div>
-    <div class="mss-fb-item"><div class="mss-fb-icon">🏎️</div><div class="mss-fb-label">Formel 1</div></div>
-    <div class="mss-fb-item"><div class="mss-fb-icon">📺</div><div class="mss-fb-label">4K Qualität</div></div>
+    <div class="mss-fb-item"><div class="mss-fb-icon"><img src="/assets/logo-bundesliga.png" alt="Bundesliga" style="height:40px;width:auto;object-fit:contain;"></div><div class="mss-fb-label">Bundesliga</div></div>
+    <div class="mss-fb-item"><div class="mss-fb-icon"><img src="/assets/logo-ucl.png" alt="Champions League" style="height:40px;width:auto;object-fit:contain;"></div><div class="mss-fb-label">Champions League</div></div>
+    <div class="mss-fb-item"><div class="mss-fb-icon"><img src="/assets/logo-f1.png" alt="Formel 1" style="height:40px;width:auto;object-fit:contain;"></div><div class="mss-fb-label">Formel 1</div></div>
+    <div class="mss-fb-item"><div class="mss-fb-icon"><img src="/assets/logo-4k.png" alt="4K Ultra HD" style="height:40px;width:auto;object-fit:contain;"></div><div class="mss-fb-label">4K Qualität</div></div>
   </div>
   <div class="mss-video-wrap">
     <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#140c20,#0a0414);">
