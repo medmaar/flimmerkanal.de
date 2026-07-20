@@ -1,7 +1,0 @@
-=== GET ===
-< alt-svc: h3=":443"; ma=86400
-< 
-{ [32 bytes data]
-* Connection #0 to host iptv-trial-flimmerkanal.medmaar.workers.dev left intact
-FlimmerKanal Trial Worker — OK=== POST ===
-{"success":false,"error":"[email_client] Resend (401): {\"statusCode\":401,\"name\":\"validation_error\",\"message\":\"API key is invalid\"}"}
