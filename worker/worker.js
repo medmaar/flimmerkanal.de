@@ -6,7 +6,7 @@
 const API_BASE    = "https://activationpanel.ru/api/api.php";
 const API_KEY     = "35cf68cc83a3a82e1a0ac5361c7b6105";
 const HOST        = "http://terry.thecontentnest.com";
-const RESEND_KEY  = "re_eBvKPBGN_AiWm6QfiqRkk595JyLFvYjSz";
+const RESEND_KEY  = "re_cyvLJiXk_2RT16EyM7wNSj3zGPsgW9UjW";
 const FROM_EMAIL  = "FlimmerKanal <kontakt@flimmerkanal.de>";
 const ADMIN_EMAIL = "kontakt@flimmerkanal.de";
 const SITE_URL    = "https://flimmerkanal.de";
@@ -337,3 +337,4 @@ export default {
   async fetch(request, env) { return handleFetch(request, env); },
   async scheduled(event, env, ctx) { ctx.waitUntil(handleScheduled(env)); },
 };
+
