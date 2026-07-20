@@ -1,0 +1,10 @@
+name = "iptv-trial-flimmerkanal"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "TRIALS"
+id = "7b8077c1af464a929d20981a52193b89"
+
+[triggers]
+crons = ["0 * * * *"]
