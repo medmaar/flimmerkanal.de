@@ -102,7 +102,7 @@
 
     /* Copyright */
     '    <div class="fk-footer-copy">',
-    '      © 2025 FlimmerKanal. Alle Rechte vorbehalten. FlimmerKanal ist ein unabhängiger IPTV-Service-Anbieter.',
+    '      © 2026 FlimmerKanal. Alle Rechte vorbehalten. FlimmerKanal ist ein unabhängiger IPTV-Service-Anbieter.',
     '    </div>',
     '  </div>',
     '</footer>'
