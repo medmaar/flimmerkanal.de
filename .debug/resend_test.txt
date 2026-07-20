@@ -1,0 +1,2 @@
+=== Resend key test ===
+{"statusCode":401,"name":"validation_error","message":"API key is invalid"}
