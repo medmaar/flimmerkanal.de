@@ -135,7 +135,7 @@ function submitOrder(e){
   var timer=setTimeout(function(){showFallback('Zeitüberschreitung.');},20000);
   function showSuccess(){clearTimeout(timer);area.style.display='none';suc.style.display='block';}
   function showFallback(r){clearTimeout(timer);err.textContent=r+' Bitte WhatsApp nutzen.';err.style.display='block';waWrap.style.display='block';btn.disabled=false;btn.textContent='Jetzt bestellen';}
-  fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:'service_pk6jnu9',template_id:'template_763fwro',user_id:'5NnfSkeYa9aonxpMe',template_params:{site_name:'FlimmerKanal',plan:PLAN_INFO,name:name||'Anonym',from_name:name||'Anonym',from_email:email||'kontakt@flimmerkanal.de',reply_to:email||'kontakt@flimmerkanal.de',phone:wa||'-',country:country||'-',device:dev||'-',message:msg}})}).then(function(r){if(r.ok)showSuccess();else r.text().then(function(){showFallback('Fehler.');});}).catch(function(){showFallback('Netzwerkfehler.');});
+  fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:'service_sljomnb',template_id:'template_9a9t2ue',user_id:'chp6X1kojVaYCTHC7',template_params:{site_name:'FlimmerKanal',plan:PLAN_INFO,name:name||'Anonym',from_name:name||'Anonym',from_email:email||'kontakt@flimmerkanal.de',reply_to:email||'kontakt@flimmerkanal.de',phone:wa||'-',country:country||'-',device:dev||'-',message:msg}})}).then(function(r){if(r.ok)showSuccess();else r.text().then(function(){showFallback('Fehler.');});}).catch(function(){showFallback('Netzwerkfehler.');});
 }
 </script>
 <script src="/assets/layout.js"></script>

@@ -97,7 +97,7 @@
     /* Payment methods */
     '    <div class="fk-footer-payments">',
     '      <p>Akzeptierte Zahlungsmethoden</p>',
-    '      <img src="/assets/payment-methods.jpg" alt="Visa, Mastercard, PayPal, Apple Pay, Google Pay, Bitcoin, USDT" loading="lazy" class="fk-payment-img" style="filter:brightness(0) invert(1);opacity:.75;">',
+    '      <img src="/assets/payment-methods.png" alt="Visa, Mastercard, PayPal, Apple Pay, Google Pay, Bitcoin, USDT" loading="lazy" class="fk-payment-img">',
     '    </div>',
 
     /* Copyright */
