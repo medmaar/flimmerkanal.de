@@ -1,24 +1,8 @@
-/* FlimmerKanal — Shared JS */
+/* FlimmerKanal — main.js
+   Handles: pricing device switcher, FAQ accordion, review carousels, drag-scroll
+   Note: nav, footer, WA float and sales banner are injected by layout.js
+*/
 (function(){
-
-  /* ── Mobile nav ── */
-  var burger = document.getElementById('fkBurger');
-  var menu   = document.getElementById('fkMobileMenu');
-  if(burger && menu){
-    burger.addEventListener('click', function(){
-      menu.classList.toggle('open');
-      var spans = burger.querySelectorAll('span');
-      if(menu.classList.contains('open')){
-        spans[0].style.transform='rotate(45deg) translate(5px,5px)';
-        spans[1].style.opacity='0';
-        spans[2].style.transform='rotate(-45deg) translate(5px,-5px)';
-      } else {
-        spans[0].style.transform='';
-        spans[1].style.opacity='';
-        spans[2].style.transform='';
-      }
-    });
-  }
 
   /* ── FAQ accordion ── */
   document.querySelectorAll('.fk-faq-q').forEach(function(btn){
@@ -82,11 +66,10 @@
       var be = document.getElementById('btn-'+k);
       if(pe) pe.textContent = p[i]+'€';
       if(pp) pp.textContent = 'für '+ n + (n===1?' Gerät':' Geräte');
-      if(be) be.href = 'iptv-'+DUR_SLUGS[i]+'-'+n+cs+'.html';
+      if(be) be.href = '/plan/iptv-'+DUR_SLUGS[i]+'-'+n+cs+'.html';
     });
   };
 
-  /* attach dev buttons */
   document.querySelectorAll('.fk-dev-btn').forEach(function(btn){
     btn.addEventListener('click', function(){ selectDev(parseInt(this.getAttribute('data-dev'),10)); });
   });
@@ -100,41 +83,6 @@
     devScroll.addEventListener('mouseup',    function(){ dragging=false; devScroll.style.cursor='grab'; });
     devScroll.addEventListener('mousemove',  function(e){ if(!dragging) return; devScroll.scrollLeft = scrollLeft-(e.pageX-devScroll.offsetLeft-startX)*1.2; });
     devScroll.style.cursor='grab';
-  }
-
-  /* ── Sales banner ── */
-  var banner    = document.getElementById('fkSalesBanner');
-  var closeBtn  = document.getElementById('fkSalesBannerClose');
-  var titleEl   = document.getElementById('fkSalesBannerTitle');
-  var textEl    = document.getElementById('fkSalesBannerText');
-  if(banner && titleEl && textEl){
-    if(sessionStorage.getItem('fk_banner_dismissed')==='1'){ /* skip */ } else {
-      var names = ['Michael','Thomas','Andreas','Stefan','Markus','Christian','Klaus','Wolfgang','Sebastian','Felix','Laura','Sarah','Anna','Julia','Lisa','Maria','Nicole','Sandra','Petra','Katrin'];
-      var cities = ['Berlin','München','Hamburg','Köln','Frankfurt','Stuttgart','Düsseldorf','Dortmund','Essen','Leipzig','Bremen','Dresden','Hannover','Nürnberg','Duisburg','Bochum','Wuppertal','Bielefeld','Bonn','Mannheim'];
-      var plans  = ['1-Monats-Abo','3-Monats-Abo','3-Monats-Abo','6-Monats-Abo','6-Monats-Abo','Jahres-Abo','Jahres-Abo','Jahres-Abo'];
-      var ago    = ['gerade eben','vor 2 Minuten','vor 5 Minuten','vor 9 Minuten'];
-      function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
-      var dismissed=false, lastName=null, timers=[];
-      function setT(fn,ms){ var id=setTimeout(fn,ms); timers.push(id); return id; }
-      function next(){
-        var name=pick(names); while(name===lastName){ name=pick(names); } lastName=name;
-        titleEl.innerHTML='<b>'+name+'</b> aus '+pick(cities)+' hat gerade das '+pick(plans)+' bestellt';
-        textEl.textContent=pick(ago);
-      }
-      function cycle(){
-        if(dismissed) return;
-        next(); banner.classList.add('show');
-        setT(function(){ if(dismissed) return; banner.classList.remove('show'); setT(cycle,3500); }, 5000);
-      }
-      setT(cycle, 2500+Math.floor(Math.random()*2000));
-      if(closeBtn){
-        closeBtn.addEventListener('click',function(){
-          dismissed=true; banner.classList.remove('show');
-          sessionStorage.setItem('fk_banner_dismissed','1');
-          timers.forEach(clearTimeout);
-        });
-      }
-    }
   }
 
 })();
