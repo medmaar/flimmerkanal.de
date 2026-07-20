@@ -65,24 +65,22 @@ jobs:
             -H "Content-Type: application/json" \
             -d '[{"cron": "0 * * * *"}]'
 
-      - name: Live test with real email
+      - name: Test Resend API key directly
         run: |
-          sleep 6
           mkdir -p .debug
-          echo "=== GET ===" > .debug/live_test.txt
-          curl -sv "https://iptv-trial-flimmerkanal.medmaar.workers.dev/" 2>&1 | tail -5 >> .debug/live_test.txt
-          echo "=== POST ===" >> .debug/live_test.txt
-          curl -s -X POST "https://iptv-trial-flimmerkanal.medmaar.workers.dev/" \
+          echo "=== Resend key test ===" > .debug/resend_test.txt
+          curl -s -X POST "https://api.resend.com/emails" \
+            -H "Authorization: Bearer re_cyvLJiXk_2RT16EyM7wNSj3zGPsgW9UjW" \
             -H "Content-Type: application/json" \
-            -d '{"name":"Test Mo","email":"elmaaroufi.md@gmail.com","whatsapp":"+212689299813","country":"Morocco","device":"Samsung Smart TV","notes":"test"}' \
-            >> .debug/live_test.txt
-          echo "" >> .debug/live_test.txt
-          cat .debug/live_test.txt
+            -d '{"from":"FlimmerKanal <kontakt@flimmerkanal.de>","to":"elmaaroufi.md@gmail.com","subject":"Test","html":"<p>Test</p>"}' \
+            >> .debug/resend_test.txt
+          echo "" >> .debug/resend_test.txt
+          cat .debug/resend_test.txt
 
       - name: Commit result
         run: |
           git config user.name bot
           git config user.email bot@example.com
-          git add .debug/live_test.txt
-          git commit -m "debug: live test result" || true
+          git add .debug/resend_test.txt
+          git commit -m "debug: resend key test" || true
           git push || true
