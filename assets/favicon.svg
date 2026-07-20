@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF6000"/>
+      <stop offset="40%" stop-color="#FF0090"/>
+      <stop offset="75%" stop-color="#C500FF"/>
+      <stop offset="100%" stop-color="#1E6FFF"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a0840"/>
+      <stop offset="100%" stop-color="#0a0414"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect width="32" height="32" rx="7" fill="url(#bg)"/>
+  <!-- F letter -->
+  <rect x="7" y="7" width="3" height="18" rx="1.5" fill="url(#g)"/>
+  <rect x="7" y="7" width="9" height="3" rx="1.5" fill="url(#g)"/>
+  <rect x="7" y="15" width="7" height="2.5" rx="1.25" fill="url(#g)"/>
+  <!-- K letter -->
+  <rect x="19" y="7" width="2.5" height="18" rx="1.25" fill="url(#g)"/>
+  <path d="M19 16 L26 7" stroke="url(#g)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M19 16 L26 25" stroke="url(#g)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+</svg>
