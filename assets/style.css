@@ -590,7 +590,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── Footer payment section ─── */
 .fk-footer-payments {
-  padding: 28px 0 20px;
+  padding: 20px 0 16px;
   border-top: 1px solid var(--border-dim);
   text-align: center;
 }
@@ -604,11 +604,11 @@ img { max-width: 100%; display: block; }
 }
 .fk-payment-img {
   max-width: 100%;
-  width: 560px;
+  width: 280px;
   height: auto;
   display: inline-block;
-  opacity: .85;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,.3));
+  opacity: .8;
+  filter: brightness(1.05);
 }
 /* Clickable footer logo */
 .fk-footer-brand > a {
