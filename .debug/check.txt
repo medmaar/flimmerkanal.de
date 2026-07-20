@@ -1,0 +1,1 @@
+FlimmerKanal Trial Worker — OK{"success":false,"error":"[email_client] Resend (401): {\"statusCode\":401,\"name\":\"validation_error\",\"message\":\"API key is invalid\"}"}
