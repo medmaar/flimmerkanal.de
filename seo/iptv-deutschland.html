@@ -168,6 +168,49 @@
 <div class="fk-rel-grid">
 <a href="kanaele.html" class="fk-rel-card"><span>📡</span>Alle Sender</a><a href="iptv-kaufen.html" class="fk-rel-card"><span>🛒</span>IPTV kaufen</a><a href="iptv-anbieter.html" class="fk-rel-card"><span>📊</span>Anbieter</a><a href="iptv-alle-sender.html" class="fk-rel-card"><span>📺</span>Senderliste</a><a href="iptv-box.html" class="fk-rel-card"><span>📺</span>IPTV Box</a><a href="was-ist-iptv.html" class="fk-rel-card"><span>📚</span>Was ist IPTV?</a>
 </div>
+<style id="faq-fix">
+.sp-faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.sp-faq-q{padding:15px 18px;font-size:.92rem;font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none;}
+.sp-faq-q:hover{background:rgba(255,255,255,.025);}
+.sp-faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.28);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fd0322;transition:transform .3s;}
+.sp-faq-item.open .sp-faq-icon{transform:rotate(45deg);}
+.sp-faq-a{max-height:0;overflow:hidden;font-size:.86rem;line-height:1.8;color:rgba(232,224,255,.68);transition:max-height .4s ease,padding .3s;padding:0 18px;}
+.sp-faq-item.open .sp-faq-a{max-height:500px;padding:0 18px 16px;}
+</style>
+<h2 style="font-size:1.3rem;font-weight:900;color:#fff;margin:40px 0 16px">H&auml;ufige Fragen</h2>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Welche deutschen Sender sind bei FlimmerKanal? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Alle deutschen Sender &ndash; ARD, ZDF, alle Dritten Programme, ORF, SRF, RTL, Sat.1, ProSieben, Kabel 1, Sky, DAZN und alle Regionalsender in HD.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Gibt es IPTV speziell f&uuml;r Deutschland? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja &ndash; FlimmerKanal ist speziell f&uuml;r den deutschen Markt optimiert mit allen deutschen Hauptsendern, vollst&auml;ndigem deutschen EPG und deutschsprachigem Support.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Kann ich Bundesliga &uuml;ber IPTV schauen? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja &ndash; alle 306 Bundesliga-Spiele der 1. und 2. Bundesliga sind live bei FlimmerKanal verf&uuml;gbar, inklusive Sky Sport und DAZN in HD und 4K.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Funktioniert FlimmerKanal &uuml;berall in Deutschland? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja &ndash; FlimmerKanal funktioniert &uuml;ber jede deutsche Internetverbindung: Glasfaser, Kabel, DSL oder mobiles LTE/5G.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Ist IPTV Deutschland g&uuml;nstiger als Kabel-TV? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja deutlich &ndash; Kabel-TV kostet ab 20€/Monat mit weniger Sendern. FlimmerKanal kostet ab 4,08€/Monat mit 50.000+ Sendern inklusive Bundesliga.</div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.sp-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.sp-faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+})();
+</script>
 <div class="seo-cta-box">
     <h2>Jetzt IPTV Deutschland testen</h2>
     <p>Über 50.000 deutsche und internationale Sender – 24 Stunden kostenlos und ohne Kreditkarte testen.</p>
