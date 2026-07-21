@@ -179,6 +179,49 @@
 <div class="fk-rel-grid">
 <a href="iptv-kaufen.html" class="fk-rel-card"><span>🛒</span>IPTV kaufen</a><a href="iptv-anbieter.html" class="fk-rel-card"><span>📊</span>Anbieter</a><a href="installationsanleitung.html" class="fk-rel-card"><span>📖</span>Einrichten</a><a href="iptv-server.html" class="fk-rel-card"><span>⚙️</span>IPTV Server</a><a href="kanaele.html" class="fk-rel-card"><span>📡</span>Sender</a><a href="iptv-lines.html" class="fk-rel-card"><span>🔑</span>Test Line</a>
 </div>
+<style id="faq-fix">
+.sp-faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.sp-faq-q{padding:15px 18px;font-size:.92rem;font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none;}
+.sp-faq-q:hover{background:rgba(255,255,255,.025);}
+.sp-faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.28);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fd0322;transition:transform .3s;}
+.sp-faq-item.open .sp-faq-icon{transform:rotate(45deg);}
+.sp-faq-a{max-height:0;overflow:hidden;font-size:.86rem;line-height:1.8;color:rgba(232,224,255,.68);transition:max-height .4s ease,padding .3s;padding:0 18px;}
+.sp-faq-item.open .sp-faq-a{max-height:500px;padding:0 18px 16px;}
+</style>
+<h2 style="font-size:1.3rem;font-weight:900;color:#fff;margin:40px 0 16px">H&auml;ufige Fragen</h2>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Wie funktioniert der kostenlose IPTV Test? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Testanforderung auf unserer Webseite oder per WhatsApp absenden &rarr; Zugangsdaten per E-Mail in Minuten &rarr; 24 Stunden vollst&auml;ndiger Zugang zu allen 50.000+ Sendern.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Brauche ich eine Kreditkarte f&uuml;r den IPTV Test? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Nein &ndash; der 24h-Test ist komplett kostenlos und ohne Kreditkartenpflicht. Kein automatisches Abo danach.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Was beinhaltet der IPTV Free Trial? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Vollst&auml;ndiger Zugang zu allen 50.000+ Sendern in HD und 4K, Bundesliga, Champions League, VOD, EPG und Catch-up TV.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Wie lange dauert der IPTV Test? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">24 Stunden ab Aktivierung. Das reicht, um einen Bundesliga-Freitagabend, einen Champions-League-Abend und die Qualit&auml;t der deutschen Hauptsender zu testen.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Was passiert nach dem Test? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Nichts automatisch. Sie entscheiden frei, ob Sie ein Abo abschlie&szlig;en. Kein Auto-Abo, keine versteckten Kosten.</div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.sp-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.sp-faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+})();
+</script>
 <div class="seo-cta-box">
     <h2>IPTV jetzt kostenlos testen</h2>
     <p>24 Stunden vollständiger Zugang – keine Kreditkarte, kein Risiko.</p>
