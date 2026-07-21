@@ -175,6 +175,49 @@
 <div class="fk-rel-grid">
 <a href="iptv-app.html" class="fk-rel-card"><span>📱</span>IPTV Apps</a><a href="iptv-android.html" class="fk-rel-card"><span>🤖</span>Android Setup</a><a href="smarters-iptv-pro.html" class="fk-rel-card"><span>⚡</span>Smarters Pro</a><a href="installationsanleitung.html" class="fk-rel-card"><span>📖</span>Einrichten</a><a href="iptv-receiver.html" class="fk-rel-card"><span>📺</span>IPTV Receiver</a><a href="smart-iptv.html" class="fk-rel-card"><span>📺</span>Smart TV</a>
 </div>
+<style id="faq-fix">
+.sp-faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.sp-faq-q{padding:15px 18px;font-size:.92rem;font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none;}
+.sp-faq-q:hover{background:rgba(255,255,255,.025);}
+.sp-faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.28);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fd0322;transition:transform .3s;}
+.sp-faq-item.open .sp-faq-icon{transform:rotate(45deg);}
+.sp-faq-a{max-height:0;overflow:hidden;font-size:.86rem;line-height:1.8;color:rgba(232,224,255,.68);transition:max-height .4s ease,padding .3s;padding:0 18px;}
+.sp-faq-item.open .sp-faq-a{max-height:500px;padding:0 18px 16px;}
+</style>
+<h2 style="font-size:1.3rem;font-weight:900;color:#fff;margin:40px 0 16px">H&auml;ufige Fragen</h2>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Welche IPTV Box ist die beste 2026? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Amazon Firestick 4K Max f&uuml;r Einsteiger (~45€), NVIDIA Shield TV Pro f&uuml;r maximale Performance (~220€). Beide laufen einwandfrei mit FlimmerKanal.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Brauche ich eine IPTV Box f&uuml;r FlimmerKanal? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Nein &ndash; FlimmerKanal l&auml;uft auch direkt auf Smart TVs, Smartphones, Tablets und PCs. Eine Box ist nur n&ouml;tig, wenn Ihr TV keine App-Unterst&uuml;tzung hat.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Welche IPTV Box unterst&uuml;tzt 4K? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Firestick 4K Max, NVIDIA Shield TV Pro, Apple TV 4K, Formuler Z11 Pro Max und MAG 522W3 &ndash; alle sind 4K-f&auml;hig und kompatibel mit FlimmerKanal.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Was ist der Unterschied zwischen IPTV Stick und IPTV Box? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ein Stick (Firestick) steckt direkt in den HDMI-Port &ndash; g&uuml;nstiger und portabler. Eine Box bietet mehr Leistung, LAN-Anschluss und Speicher f&uuml;r DVR.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Kann ich meine bestehende Set-Top-Box weiternutzen? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Wenn die Box Android TV oder Fire OS hat, ja. Alte Kabel-/Satellit-Receiver ohne Android-Betriebssystem ben&ouml;tigen eine neue IPTV-f&auml;hige Box.</div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.sp-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.sp-faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+})();
+</script>
 <div class="seo-cta-box">
     <h2>Kein kompatibles Gerät? Kein Problem!</h2>
     <p>FlimmerKanal läuft auf praktisch allem: Firestick, Smart TV, Android Box, iPhone, PC und mehr. Testen Sie jetzt 24 Stunden kostenlos.</p>
