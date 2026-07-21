@@ -170,6 +170,49 @@
 <div class="fk-rel-grid">
 <a href="kanaele.html" class="fk-rel-card"><span>📡</span>Senderliste</a><a href="iptv-deutschland.html" class="fk-rel-card"><span>🇩🇪</span>DE Sender</a><a href="albanisches-iptv.html" class="fk-rel-card"><span>🇦🇱</span>Albanisch</a><a href="iptv-kaufen.html" class="fk-rel-card"><span>🛒</span>IPTV kaufen</a><a href="iptv-app.html" class="fk-rel-card"><span>📱</span>IPTV Apps</a><a href="iptv-test.html" class="fk-rel-card"><span>🆓</span>Gratis testen</a>
 </div>
+<style id="faq-fix">
+.sp-faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.sp-faq-q{padding:15px 18px;font-size:.92rem;font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none;}
+.sp-faq-q:hover{background:rgba(255,255,255,.025);}
+.sp-faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.28);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fd0322;transition:transform .3s;}
+.sp-faq-item.open .sp-faq-icon{transform:rotate(45deg);}
+.sp-faq-a{max-height:0;overflow:hidden;font-size:.86rem;line-height:1.8;color:rgba(232,224,255,.68);transition:max-height .4s ease,padding .3s;padding:0 18px;}
+.sp-faq-item.open .sp-faq-a{max-height:500px;padding:0 18px 16px;}
+</style>
+<h2 style="font-size:1.3rem;font-weight:900;color:#fff;margin:40px 0 16px">H&auml;ufige Fragen</h2>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Wie viele Sender hat FlimmerKanal insgesamt? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">FlimmerKanal bietet &uuml;ber 50.000 Live-Sender aus 150+ L&auml;ndern in HD und 4K, plus 300.000+ Filme und Serien auf Abruf.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Sind alle deutschen Sender dabei? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja &ndash; ARD, ZDF, alle Dritten, ORF, SRF, RTL, Sat.1, ProSieben, Sky, DAZN und alle weiteren deutschen Sender in HD.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Gibt es einen Programmf&uuml;hrer (EPG)? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja &ndash; vollst&auml;ndiger EPG f&uuml;r alle Sender, 7 Tage im Voraus. Sichtbar in IPTV Smarters Pro, TiviMate und GSE Smart IPTV.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Wie oft wird die Senderliste aktualisiert? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">T&auml;glich. Neue Sender werden hinzugef&uuml;gt, defekte Streams sofort repariert. Bei dringendem Bedarf WhatsApp-Support kontaktieren.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Gibt es internationale Sender bei FlimmerKanal? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja &ndash; &uuml;ber 45.000 internationale Sender aus UK, Frankreich, Italien, T&uuml;rkei, Arabien, USA und 140 weiteren L&auml;ndern.</div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.sp-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.sp-faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+})();
+</script>
 <div class="sp-cta">
     <h2>FlimmerKanal 24h kostenlos testen</h2>
     <p>50.000+ Sender in HD &amp; 4K &ndash; ohne Kreditkarte, ohne Risiko.</p>
