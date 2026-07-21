@@ -161,6 +161,49 @@
 <div class="fk-rel-grid">
 <a href="iptv-anbieter.html" class="fk-rel-card"><span>📊</span>Anbieter Info</a><a href="iptv-kaufen.html" class="fk-rel-card"><span>🛒</span>IPTV kaufen</a><a href="iptv-abo.html" class="fk-rel-card"><span>📦</span>Abo & Pakete</a><a href="bester-iptv-anbieter.html" class="fk-rel-card"><span>🏆</span>Bester Anbieter</a><a href="iptv-test.html" class="fk-rel-card"><span>🆓</span>Testen</a><a href="iptv-forum.html" class="fk-rel-card"><span>💬</span>Forum</a>
 </div>
+<style id="faq-fix">
+.sp-faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.sp-faq-q{padding:15px 18px;font-size:.92rem;font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none;}
+.sp-faq-q:hover{background:rgba(255,255,255,.025);}
+.sp-faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.28);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fd0322;transition:transform .3s;}
+.sp-faq-item.open .sp-faq-icon{transform:rotate(45deg);}
+.sp-faq-a{max-height:0;overflow:hidden;font-size:.86rem;line-height:1.8;color:rgba(232,224,255,.68);transition:max-height .4s ease,padding .3s;padding:0 18px;}
+.sp-faq-item.open .sp-faq-a{max-height:500px;padding:0 18px 16px;}
+</style>
+<h2 style="font-size:1.3rem;font-weight:900;color:#fff;margin:40px 0 16px">H&auml;ufige Fragen</h2>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Was ist ein IPTV Reseller? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ein IPTV-Reseller kauft Wholesale-Zug&auml;nge beim Anbieter (FlimmerKanal) und verkauft Endkunden-Abonnements weiter &ndash; mit eigenem Aufschlag.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Wie werde ich IPTV Reseller bei FlimmerKanal? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">WhatsApp-Nachricht mit dem Stichwort &bdquo;Reseller&ldquo; senden. Unser Team erkl&auml;rt das Reseller-Panel, die Preise und den Einstieg.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Wie viel kann ich als IPTV Reseller verdienen? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Mit 30&ndash;50 Kunden sind 200&ndash;400€ monatliches Nebeneinkommen realistisch. Bestehende FlimmerKanal-Reseller berichten von wachsenden Portfolios.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Brauche ich technisches Wissen als IPTV Reseller? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Nein &ndash; das Reseller-Panel ist einfach zu bedienen. Unser Support hilft bei allen technischen Fragen Ihrer Kunden.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Welche Zielgruppen eignen sich f&uuml;r IPTV-Reselling? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Diaspora-Gemeinschaften (t&uuml;rkisch, albanisch, arabisch), Sportfans, Familien die Kabel-TV ersetzen wollen &ndash; alle sind potenzielle Kunden.</div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.sp-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.sp-faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+})();
+</script>
 <div class="sp-cta">
     <h2>FlimmerKanal 24h kostenlos testen</h2>
     <p>50.000+ Sender in HD &amp; 4K &ndash; ohne Kreditkarte, ohne Risiko.</p>
