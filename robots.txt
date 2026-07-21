@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /kontakt/chat
+Disallow: /functions/
+Disallow: /worker/
 
 Sitemap: https://www.flimmerkanal.de/sitemap.xml
