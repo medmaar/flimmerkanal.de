@@ -193,6 +193,49 @@
 <div class="fk-rel-grid">
 <a href="bester-iptv-anbieter.html" class="fk-rel-card"><span>🏆</span>Bester Anbieter</a><a href="iptv-kaufen.html" class="fk-rel-card"><span>🛒</span>IPTV kaufen</a><a href="iptv-test.html" class="fk-rel-card"><span>🆓</span>Gratis testen</a><a href="iptv-forum.html" class="fk-rel-card"><span>💬</span>Forum-Meinungen</a><a href="iptv-abo.html" class="fk-rel-card"><span>📦</span>Pakete & Preise</a><a href="iptv-deutschland.html" class="fk-rel-card"><span>🇩🇪</span>IPTV Deutschland</a>
 </div>
+<style id="faq-fix">
+.sp-faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.sp-faq-q{padding:15px 18px;font-size:.92rem;font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none;}
+.sp-faq-q:hover{background:rgba(255,255,255,.025);}
+.sp-faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.28);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fd0322;transition:transform .3s;}
+.sp-faq-item.open .sp-faq-icon{transform:rotate(45deg);}
+.sp-faq-a{max-height:0;overflow:hidden;font-size:.86rem;line-height:1.8;color:rgba(232,224,255,.68);transition:max-height .4s ease,padding .3s;padding:0 18px;}
+.sp-faq-item.open .sp-faq-a{max-height:500px;padding:0 18px 16px;}
+</style>
+<h2 style="font-size:1.3rem;font-weight:900;color:#fff;margin:40px 0 16px">H&auml;ufige Fragen</h2>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Welcher IPTV Anbieter ist in Deutschland am besten? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">FlimmerKanal z&auml;hlt zu den f&uuml;hrenden IPTV-Anbietern f&uuml;r den deutschen Markt &ndash; mit &uuml;ber 10.000 Kunden, 4.9-Sterne-Bewertung auf Google und 24/7 deutschsprachigem Support.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Wie erkenne ich einen seri&ouml;sen IPTV Anbieter? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Seri&ouml;se Anbieter haben ein vollst&auml;ndiges Impressum, transparente Preise, echte Kundenbewertungen und bieten einen kostenlosen Test an &ndash; ohne Kreditkarte.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Bietet FlimmerKanal einen kostenlosen Test? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja &ndash; 24 Stunden vollst&auml;ndiger Gratis-Test ohne Kreditkarte. Alle 50.000+ Sender, Bundesliga und 4K inklusive.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Was unterscheidet FlimmerKanal von anderen Anbietern? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Stabile EU-Server, echter 4K-Support, vollst&auml;ndiger EPG, 24/7 WhatsApp-Support auf Deutsch und keine versteckten Kosten.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Ist FlimmerKanal IPTV in Deutschland legal? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">FlimmerKanal betreibt einen technischen Streaming-Dienst mit vollst&auml;ndigem Impressum und transparenten AGB gem&auml;&szlig; EU-Recht.</div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.sp-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.sp-faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+})();
+</script>
 <div class="seo-cta-box">
     <h2>FlimmerKanal: Bester IPTV Anbieter selbst testen</h2>
     <p>Prüfen Sie alle Kriterien selbst – 24 Stunden kostenlos, kein Risiko.</p>
