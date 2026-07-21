@@ -171,6 +171,49 @@
 <div class="fk-rel-grid">
 <a href="smarters-iptv-pro.html" class="fk-rel-card"><span>⚡</span>Smarters Pro</a><a href="kodi-iptv.html" class="fk-rel-card"><span>🎬</span>Kodi IPTV</a><a href="iptv-android.html" class="fk-rel-card"><span>🤖</span>Android</a><a href="iptv-box.html" class="fk-rel-card"><span>📺</span>IPTV Box</a><a href="installationsanleitung.html" class="fk-rel-card"><span>📖</span>Einrichten</a><a href="iptv-receiver.html" class="fk-rel-card"><span>📺</span>Receiver</a>
 </div>
+<style id="faq-fix">
+.sp-faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.sp-faq-q{padding:15px 18px;font-size:.92rem;font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none;}
+.sp-faq-q:hover{background:rgba(255,255,255,.025);}
+.sp-faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.28);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fd0322;transition:transform .3s;}
+.sp-faq-item.open .sp-faq-icon{transform:rotate(45deg);}
+.sp-faq-a{max-height:0;overflow:hidden;font-size:.86rem;line-height:1.8;color:rgba(232,224,255,.68);transition:max-height .4s ease,padding .3s;padding:0 18px;}
+.sp-faq-item.open .sp-faq-a{max-height:500px;padding:0 18px 16px;}
+</style>
+<h2 style="font-size:1.3rem;font-weight:900;color:#fff;margin:40px 0 16px">H&auml;ufige Fragen</h2>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Welche IPTV App ist die beste? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">IPTV Smarters Pro ist die meistempfohlene App f&uuml;r Einsteiger &ndash; kostenlos, einfach und auf allen Plattformen verf&uuml;gbar. TiviMate ist die beste Wahl f&uuml;r Android TV.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Welche IPTV App f&uuml;r Android TV? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">TiviMate ist die beste IPTV-App f&uuml;r Android TV &ndash; mit Multi-Panel, DVR-Funktion und dem besten EPG-Interface. Alternativ: IPTV Smarters Pro.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Gibt es eine kostenlose IPTV App? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja &ndash; IPTV Smarters Pro, GSE Smart IPTV und Perfect Player sind kostenlos. Nur das IPTV-Abonnement (FlimmerKanal ab 9€/Monat) ist kostenpflichtig.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Wie richte ich IPTV Smarters Pro ein? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">App installieren &rarr; &bdquo;Login with Xtream Codes API&ldquo; w&auml;hlen &rarr; FlimmerKanal-URL, Benutzername und Passwort eingeben &rarr; fertig in 2 Minuten.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Welche IPTV App f&uuml;r Samsung Smart TV? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">IPTV Smarters Pro aus dem Samsung Tizen App Store. Alternativ Amazon Firestick per HDMI anschlie&szlig;en f&uuml;r alle Modelle.</div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.sp-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.sp-faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+})();
+</script>
 <div class="seo-cta-box">
     <h2>FlimmerKanal 24h kostenlos testen</h2>
     <p>Testen Sie alle Apps mit unserem kostenlosen Probeabo – kein Kreditkarte, kein Risiko.</p>
