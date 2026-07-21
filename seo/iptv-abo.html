@@ -191,6 +191,49 @@
 <div class="fk-rel-grid">
 <a href="iptv-kaufen.html" class="fk-rel-card"><span>🛒</span>IPTV kaufen</a><a href="bester-iptv-anbieter.html" class="fk-rel-card"><span>🏆</span>Bester Anbieter</a><a href="iptv-test.html" class="fk-rel-card"><span>🆓</span>Erst testen</a><a href="iptv-anbieter.html" class="fk-rel-card"><span>📊</span>Vergleich</a><a href="kanaele.html" class="fk-rel-card"><span>📡</span>Alle Sender</a><a href="installationsanleitung.html" class="fk-rel-card"><span>📖</span>Einrichten</a>
 </div>
+<style id="faq-fix">
+.sp-faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.sp-faq-q{padding:15px 18px;font-size:.92rem;font-weight:700;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;user-select:none;}
+.sp-faq-q:hover{background:rgba(255,255,255,.025);}
+.sp-faq-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(253,3,34,.1);border:1px solid rgba(253,3,34,.28);display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fd0322;transition:transform .3s;}
+.sp-faq-item.open .sp-faq-icon{transform:rotate(45deg);}
+.sp-faq-a{max-height:0;overflow:hidden;font-size:.86rem;line-height:1.8;color:rgba(232,224,255,.68);transition:max-height .4s ease,padding .3s;padding:0 18px;}
+.sp-faq-item.open .sp-faq-a{max-height:500px;padding:0 18px 16px;}
+</style>
+<h2 style="font-size:1.3rem;font-weight:900;color:#fff;margin:40px 0 16px">H&auml;ufige Fragen</h2>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Gibt es ein IPTV Abo ohne Vertrag? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja. Alle FlimmerKanal-Pakete laufen ohne automatische Verl&auml;ngerung &ndash; Sie w&auml;hlen 1 bis 12 Monate und verl&auml;ngern nur, wenn Sie m&ouml;chten.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Was ist das g&uuml;nstigste IPTV Abo? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Das 12-Monate-Paket mit 1 Verbindung f&uuml;r 49€ ist das g&uuml;nstigste &ndash; nur 4,08€/Monat. Das ist g&uuml;nstiger als jeder Streamingdienst.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Welche Zahlungsmethoden gibt es? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">FlimmerKanal akzeptiert PayPal, Visa, Mastercard, Apple Pay, Google Pay, Bitcoin und USDT.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Kann ich das IPTV Abo auf mehreren Ger&auml;ten nutzen? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">Ja &ndash; beim Kauf w&auml;hlen Sie 1 bis 10 gleichzeitige Verbindungen. Jede Verbindung erlaubt einem Ger&auml;t zu streamen.</div>
+</div>
+<div class="sp-faq-item">
+  <div class="sp-faq-q">Was ist im IPTV Abo enthalten? <span class="sp-faq-icon">+</span></div>
+  <div class="sp-faq-a">50.000+ Sender in HD/4K, 300.000+ VOD-Titel, Bundesliga, Champions League, EPG, Catch-up TV und 24/7 WhatsApp-Support.</div>
+</div>
+
+<script>
+(function(){
+  document.querySelectorAll('.sp-faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement;
+      var isOpen=item.classList.contains('open');
+      document.querySelectorAll('.sp-faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!isOpen)item.classList.add('open');
+    });
+  });
+})();
+</script>
 <div class="seo-cta-box">
     <h2>IPTV Abo jetzt starten</h2>
     <p>Erst 24 Stunden kostenlos testen, dann das passende Abo wählen – keine Kreditkarte für den Test nötig.</p>
