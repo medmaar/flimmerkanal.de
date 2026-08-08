@@ -4,4 +4,4 @@ Disallow: /kontakt/chat
 Disallow: /functions/
 Disallow: /worker/
 
-Sitemap: https://www.flimmerkanal.de/sitemap.xml
+Sitemap: https://flimmerkanal.de/sitemap.xml
