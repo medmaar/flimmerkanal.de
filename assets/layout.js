@@ -6,7 +6,7 @@
   'use strict';
 
   /* ── Active page detection ── */
-  var path = window.location.pathname.replace(/\/$/, '') || '/index.html';
+  var path = window.location.pathname.replace(/\/$/, '') || '/';
   function isActive(href) {
     var h = href.replace(/^\//, '');
     var p = path.replace(/^\//, '');
@@ -22,29 +22,29 @@
      ══════════════════════════════════════════════ */
   var NAV_HTML = [
     '<nav class="fk-nav" id="fkNav">',
-    '  <a href="/index.html" class="fk-nav-logo">',
+    '  <a href="/" class="fk-nav-logo">',
     '    <img src="/assets/logo.svg" alt="FlimmerKanal" loading="lazy"',
     '         onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\'">',
     '    <span style="display:none">FlimmerKanal</span>',
     '  </a>',
     '  <div class="fk-nav-links">',
-    '    <a href="/index.html"'             + (isActive('/index.html')               ? ' class="active"' : '') + '>Startseite</a>',
-    '    <a href="/preise.html"'            + (isActive('/preise.html')              ? ' class="active"' : '') + '>Preise</a>',
-    '    <a href="/wie-es-funktioniert.html"' + (isActive('/wie-es-funktioniert.html') ? ' class="active"' : '') + '>So geht\'s</a>',
-    '    <a href="/ueber-uns.html"'         + (isActive('/ueber-uns.html')           ? ' class="active"' : '') + '>Über uns</a>',
-    '    <a href="/kostenloser-test.html" class="fk-nav-cta">Kostenlos testen</a>',
+    '    <a href="/"'             + (isActive('/index.html')               ? ' class="active"' : '') + '>Startseite</a>',
+    '    <a href="/preise"'            + (isActive('/preise')              ? ' class="active"' : '') + '>Preise</a>',
+    '    <a href="/wie-es-funktioniert"' + (isActive('/wie-es-funktioniert') ? ' class="active"' : '') + '>So geht\'s</a>',
+    '    <a href="/ueber-uns"'         + (isActive('/ueber-uns')           ? ' class="active"' : '') + '>Über uns</a>',
+    '    <a href="/kostenloser-test" class="fk-nav-cta">Kostenlos testen</a>',
     '  </div>',
     '  <button class="fk-burger" id="fkBurger" aria-label="Menü" aria-expanded="false">',
     '    <span></span><span></span><span></span>',
     '  </button>',
     '</nav>',
     '<div class="fk-mobile-menu" id="fkMobileMenu" aria-hidden="true">',
-    '  <a href="/index.html">Startseite</a>',
-    '  <a href="/preise.html">Preise</a>',
-    '  <a href="/wie-es-funktioniert.html">So geht\'s</a>',
-    '  <a href="/ueber-uns.html">Über uns</a>',
-    '  <a href="/kontakt.html">Kontakt</a>',
-    '  <a href="/kostenloser-test.html" class="fk-nav-cta">Kostenlos testen</a>',
+    '  <a href="/">Startseite</a>',
+    '  <a href="/preise">Preise</a>',
+    '  <a href="/wie-es-funktioniert">So geht\'s</a>',
+    '  <a href="/ueber-uns">Über uns</a>',
+    '  <a href="/kontakt">Kontakt</a>',
+    '  <a href="/kostenloser-test" class="fk-nav-cta">Kostenlos testen</a>',
     '</div>'
   ].join('\n');
 
@@ -58,7 +58,7 @@
 
     /* Brand / logo — wrapped in <a> so it's clickable */
     '      <div class="fk-footer-brand">',
-    '        <a href="/index.html" aria-label="FlimmerKanal Startseite">',
+    '        <a href="/" aria-label="FlimmerKanal Startseite">',
     '          <img src="/assets/logo.svg" alt="FlimmerKanal" loading="lazy"',
     '               onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\'">',
     '          <span style="display:none">FlimmerKanal</span>',
@@ -73,23 +73,23 @@
     '      <div class="fk-footer-cols">',
     '        <div class="fk-footer-col">',
     '          <h5>Service</h5>',
-    '          <a href="/index.html">Startseite</a>',
-    '          <a href="/preise.html">Preise</a>',
-    '          <a href="/kostenloser-test.html">Kostenlos testen</a>',
-    '          <a href="/wie-es-funktioniert.html">So geht\'s</a>',
+    '          <a href="/">Startseite</a>',
+    '          <a href="/preise">Preise</a>',
+    '          <a href="/kostenloser-test">Kostenlos testen</a>',
+    '          <a href="/wie-es-funktioniert">So geht\'s</a>',
     '        </div>',
     '        <div class="fk-footer-col">',
     '          <h5>Unternehmen</h5>',
-    '          <a href="/ueber-uns.html">Über uns</a>',
-    '          <a href="/kontakt.html">Kontakt</a>',
+    '          <a href="/ueber-uns">Über uns</a>',
+    '          <a href="/kontakt">Kontakt</a>',
     '          <a href="' + WA_BASE + 'Hallo%2C+ich+interessiere+mich+f%C3%BCr+FlimmerKanal" target="_blank" rel="noopener">WhatsApp Support</a>',
     '        </div>',
     '        <div class="fk-footer-col">',
     '          <h5>Rechtliches</h5>',
-    '          <a href="/legal/datenschutz.html">Datenschutz</a>',
-    '          <a href="/legal/agb.html">AGB</a>',
-    '          <a href="/legal/widerruf.html">Widerrufsrecht</a>',
-    '          <a href="/legal/impressum.html">Impressum</a>',
+    '          <a href="/legal/datenschutz">Datenschutz</a>',
+    '          <a href="/legal/agb">AGB</a>',
+    '          <a href="/legal/widerruf">Widerrufsrecht</a>',
+    '          <a href="/legal/impressum">Impressum</a>',
     '        </div>',
     '      </div>',
     '    </div>',
