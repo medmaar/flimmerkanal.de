@@ -44,7 +44,7 @@
       var btnEl   = document.getElementById('btn-'   + k);
       if (priceEl) priceEl.textContent = p[i] + '€';
       if (perEl)   perEl.textContent   = 'für ' + n + (n === 1 ? ' Gerät' : ' Geräte');
-      if (btnEl)   btnEl.href = '/plan/iptv-' + DUR_SLUGS[i] + '-' + n + cs + '.html';
+      if (btnEl)   btnEl.href = '/plan/iptv-' + DUR_SLUGS[i] + '-' + n + cs;
     });
   }
 
