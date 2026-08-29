@@ -64,7 +64,6 @@
 /seo/smarters-iptv-pro.html /seo/smarters-iptv-pro 301
 /seo/tuerkisches-iptv.html /seo/tuerkisches-iptv 301
 /seo/was-ist-iptv.html /seo/was-ist-iptv 301
-/seo/wm-2026-iptv.html /seo/wm-2026-iptv 301
 /plan/iptv-1-monat-1-verbindung.html /plan/iptv-1-monat-1-verbindung 301
 /plan/iptv-1-monat-10-verbindungen.html /plan/iptv-1-monat-10-verbindungen 301
 /plan/iptv-1-monat-2-verbindungen.html /plan/iptv-1-monat-2-verbindungen 301
@@ -105,3 +104,10 @@
 /plan/iptv-6-monate-7-verbindungen.html /plan/iptv-6-monate-7-verbindungen 301
 /plan/iptv-6-monate-8-verbindungen.html /plan/iptv-6-monate-8-verbindungen 301
 /plan/iptv-6-monate-9-verbindungen.html /plan/iptv-6-monate-9-verbindungen 301
+
+# wm-2026-iptv is now a redirect to iptv-bundesliga (301 replaces meta-refresh)
+/seo/wm-2026-iptv.html /seo/iptv-bundesliga 301
+/seo/wm-2026-iptv /seo/iptv-bundesliga 301
+
+# new free trial page .html redirect
+/seo/iptv-free-trial.html /seo/iptv-free-trial 301
