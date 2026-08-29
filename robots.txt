@@ -18,3 +18,11 @@ Allow: /
 
 User-agent: Google-Extended
 Allow: /
+
+# Bingbot – allow for Bing indexing
+User-agent: Bingbot
+Allow: /
+
+# Applebot – allow for Siri/Spotlight
+User-agent: Applebot
+Allow: /

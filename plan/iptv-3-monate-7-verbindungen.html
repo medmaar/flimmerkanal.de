@@ -26,14 +26,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="IPTV 3 Monate – 7 Verbindungen | 119€ | FlimmerKanal">
 <meta name="twitter:description" content="IPTV 3 Monate mit 7 Verbindungen für 168€. 50.000+ Live-Sender, 300.000+ Filme & Serien, Sport & PPV. Kein Vertrag. Sofortige Aktivierung.">
-<meta name="twitter:image" content="https://flimmerkanal.de/assets/hero-sport.jpg">
+<meta name="twitter:image" content="https://flimmerkanal.de/assets/hero-og.jpg">
 <meta name="twitter:image:alt" content="FlimmerKanal IPTV – 50.000+ Sender in HD &amp; 4K">
 <meta name="twitter:site" content="@flimmerkanal">
 <meta property="og:title" content="IPTV 3 Monate – 7 Verbindungen | 119€ | FlimmerKanal">
 <meta property="og:description" content="IPTV 3 Monate mit 7 Verbindungen für 168€. 50.000+ Live-Sender, 300.000+ Filme & Serien, Sport & PPV. Kein Vertrag. Sofortige Aktivierung.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flimmerkanal.de/plan/iptv-3-monate-7-verbindungen">
-<meta property="og:image" content="https://flimmerkanal.de/assets/hero-sport.jpg">
+<meta property="og:image" content="https://flimmerkanal.de/assets/hero-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="FlimmerKanal IPTV – 50.000+ Sender in HD &amp; 4K">
@@ -166,8 +166,8 @@ function submitOrder(e){
   fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({service_id:'service_sljomnb',template_id:'template_9a9t2ue',user_id:'chp6X1kojVaYCTHC7',template_params:{site_name:'FlimmerKanal',plan:PLAN_INFO,name:name||'Anonym',from_name:name||'Anonym',from_email:email||'kontakt@flimmerkanal.de',reply_to:email||'kontakt@flimmerkanal.de',phone:wa||'-',country:country||'-',device:dev||'-',message:msg}})}).then(function(r){if(r.ok)showSuccess();else r.text().then(function(){showFallback('Fehler.');});}).catch(function(){showFallback('Netzwerkfehler.');});
 }
 </script>
-<script src="/assets/layout.js"></script>
-<script src="/assets/main.js"></script>
+<script src="/assets/layout.js" defer></script>
+<script src="/assets/main.js" defer></script>
 
 <section style="max-width:860px;margin:40px auto;padding:0 24px">
 <h2 style="font-size:1.3rem;font-weight:900;color:#fff;margin:0 0 16px">Alles inklusive: Was Sie mit diesem IPTV-Paket bekommen</h2>
