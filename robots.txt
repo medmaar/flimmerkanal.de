@@ -5,3 +5,16 @@ Disallow: /functions/
 Disallow: /worker/
 
 Sitemap: https://flimmerkanal.de/sitemap.xml
+
+# AI crawlers – allow for AI search visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
