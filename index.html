@@ -26,6 +26,8 @@
 <meta property="og:image:alt" content="FlimmerKanal IPTV – 50.000+ Sender in HD &amp; 4K">
 <meta property="og:site_name" content="FlimmerKanal">
 <meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="de_AT">
+<meta property="og:locale:alternate" content="de_CH">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FlimmerKanal – IPTV Deutschland | 50.000+ Sender in HD & 4K">
 <meta name="twitter:description" content="FlimmerKanal – IPTV Anbieter für Deutschland. 50.000+ Live-Sender HD & 4K, 300.000+ Filme, Bundesliga, Champions League & PPV. Ab 9€/Monat. Gratis testen.">
@@ -37,8 +39,9 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/style.min.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "FlimmerKanal IPTV Abo", "description": "Premium IPTV Service mit 50.000+ Live-Sendern und 300.000+ VOD-Titeln. Pläne ab 9€/Monat.", "brand": {"@type": "Brand", "name": "FlimmerKanal"}, "offers": {"@type": "AggregateOffer", "lowPrice": "9.00", "highPrice": "149.00", "priceCurrency": "EUR", "offerCount": "4", "availability": "https://schema.org/InStock", "url": "https://flimmerkanal.de/preise", "priceValidUntil": "2027-12-31"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "248", "bestRating": "5", "worstRating": "1"}, "image": "https://flimmerkanal.de/assets/hero-og.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"FlimmerKanal","url":"https://flimmerkanal.de","inLanguage":"de-DE","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://flimmerkanal.de/seo/iptv-kaufen?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"FlimmerKanal","url":"https://flimmerkanal.de","logo":"https://flimmerkanal.de/assets/logo.svg","contactPoint":{"@type":"ContactPoint","contactType":"customer support","availableLanguage":["German","English"],"url":"https://flimmerkanal.de/kontakt"},"sameAs":["https://www.trustpilot.com/review/flimmerkanal.de","https://t.me/flimmerkanal","https://wa.me/message/flimmerkanal","https://www.youtube.com/@flimmerkanal","https://www.reddit.com/r/iptv"]}</script>
@@ -188,10 +191,22 @@
 
   <!-- Feature bar + Video -->
   <div class="mss-feat-bar">
-    <div class="mss-fb-item"><div class="mss-fb-icon"><img src="/assets/logo-bundesliga.png" alt="Bundesliga" style="height:40px;width:auto;object-fit:contain;" width="960" height="960" loading="eager"></div><div class="mss-fb-label">Bundesliga</div></div>
-    <div class="mss-fb-item"><div class="mss-fb-icon"><img src="/assets/logo-ucl.png" alt="Champions League" style="height:40px;width:auto;object-fit:contain;" width="568" height="540" loading="eager"></div><div class="mss-fb-label">Champions League</div></div>
-    <div class="mss-fb-item"><div class="mss-fb-icon"><img src="/assets/logo-f1.png" alt="Formel 1" style="height:40px;width:auto;object-fit:contain;" width="800" height="800" loading="eager"></div><div class="mss-fb-label">Formel 1</div></div>
-    <div class="mss-fb-item"><div class="mss-fb-icon"><img src="/assets/logo-4k.png" alt="4K Ultra HD" style="height:40px;width:auto;object-fit:contain;" width="511" height="360" loading="eager"></div><div class="mss-fb-label">4K Qualität</div></div>
+    <div class="mss-fb-item"><div class="mss-fb-icon"><picture>
+      <source srcset="/assets/logo-bundesliga.webp" type="image/webp">
+      <img src="/assets/logo-bundesliga.png" alt="Bundesliga" style="height:40px;width:auto;object-fit:contain;" width="960" height="960" loading="eager">
+    </picture></div><div class="mss-fb-label">Bundesliga</div></div>
+    <div class="mss-fb-item"><div class="mss-fb-icon"><picture>
+      <source srcset="/assets/logo-ucl.webp" type="image/webp">
+      <img src="/assets/logo-ucl.png" alt="Champions League" style="height:40px;width:auto;object-fit:contain;" width="568" height="540" loading="eager">
+    </picture></div><div class="mss-fb-label">Champions League</div></div>
+    <div class="mss-fb-item"><div class="mss-fb-icon"><picture>
+      <source srcset="/assets/logo-f1.webp" type="image/webp">
+      <img src="/assets/logo-f1.png" alt="Formel 1" style="height:40px;width:auto;object-fit:contain;" width="800" height="800" loading="eager">
+    </picture></div><div class="mss-fb-label">Formel 1</div></div>
+    <div class="mss-fb-item"><div class="mss-fb-icon"><picture>
+      <source srcset="/assets/logo-4k.webp" type="image/webp">
+      <img src="/assets/logo-4k.png" alt="4K Ultra HD" style="height:40px;width:auto;object-fit:contain;" width="511" height="360" loading="eager">
+    </picture></div><div class="mss-fb-label">4K Qualität</div></div>
   </div>
   <div class="mss-video-wrap">
     <video
@@ -299,16 +314,76 @@
     <p style="text-align:center;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(232,224,255,.35);margin:0 0 14px;font-family:'Plus Jakarta Sans','DM Sans',sans-serif;">300.000+ Filme &amp; Serien</p>
         <div class="mms-poster-overflow">
       <div class="mms-poster-track">
-        <div class="mms-poster"><img src="/assets/poster-das-boot.jpg" alt="Das Boot 1981" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
-        <div class="mms-poster"><img src="/assets/poster-metropolis.jpg" alt="Metropolis 1927" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
-        <div class="mms-poster"><img src="/assets/poster-untergang.jpg" alt="Der Untergang 2004" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
-        <div class="mms-poster"><img src="/assets/poster-lola-rennt.jpg" alt="Lola Rennt 1998" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
-        <div class="mms-poster"><img src="/assets/poster-lives-others.jpg" alt="Das Leben der Anderen 2006" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
-        <div class="mms-poster"><img src="/assets/poster-ich-bin.jpg" alt="Ich bin dein Mensch 2021" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
-        <div class="mms-poster"><img src="/assets/poster-grosser.jpg" alt="Großer Schwarzer Riese 2022" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
-        <div class="mms-poster"><img src="/assets/poster-sieben-winter.jpg" alt="Sieben Winter in Teheran 2023" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
-        <div class="mms-poster"><img src="/assets/poster-roter-himmel.jpg" alt="Roter Himmel 2023" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
-        <div class="mms-poster"><img src="/assets/poster-hilde.jpg" alt="In Liebe, Eure Hilde 2024" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-das-boot.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-das-boot.webp" type="image/webp">
+      <img src="/assets/poster-das-boot.jpg" alt="Das Boot 1981" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-metropolis.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-metropolis.webp" type="image/webp">
+      <img src="/assets/poster-metropolis.jpg" alt="Metropolis 1927" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-untergang.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-untergang.webp" type="image/webp">
+      <img src="/assets/poster-untergang.jpg" alt="Der Untergang 2004" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-lola-rennt.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-lola-rennt.webp" type="image/webp">
+      <img src="/assets/poster-lola-rennt.jpg" alt="Lola Rennt 1998" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-lives-others.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-lives-others.webp" type="image/webp">
+      <img src="/assets/poster-lives-others.jpg" alt="Das Leben der Anderen 2006" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-ich-bin.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-ich-bin.webp" type="image/webp">
+      <img src="/assets/poster-ich-bin.jpg" alt="Ich bin dein Mensch 2021" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-grosser.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-grosser.webp" type="image/webp">
+      <img src="/assets/poster-grosser.jpg" alt="Großer Schwarzer Riese 2022" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-sieben-winter.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-sieben-winter.webp" type="image/webp">
+      <img src="/assets/poster-sieben-winter.jpg" alt="Sieben Winter in Teheran 2023" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-roter-himmel.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-roter-himmel.webp" type="image/webp">
+      <img src="/assets/poster-roter-himmel.jpg" alt="Roter Himmel 2023" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
+        <div class="mms-poster"><picture>
+      <source srcset="/assets/poster-hilde.webp" type="image/webp">
+      <picture>
+      <source srcset="/assets/poster-hilde.webp" type="image/webp">
+      <img src="/assets/poster-hilde.jpg" alt="In Liebe, Eure Hilde 2024" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async">
+    </picture>
+    </picture></div>
         <div class="mms-poster"><img src="/assets/poster-das-boot.jpg" alt="Das Boot 1981" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
         <div class="mms-poster"><img src="/assets/poster-metropolis.jpg" alt="Metropolis 1927" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
         <div class="mms-poster"><img src="/assets/poster-untergang.jpg" alt="Der Untergang 2004" style="width:100%;height:100%;object-fit:cover;border-radius:13px;" loading="lazy" width="300" height="450" decoding="async"></div>
