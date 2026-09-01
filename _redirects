@@ -422,100 +422,39 @@
 # ── Missing keyword variant redirects (SEO structure alignment) ──────────────
 
 # ip tv * variants (5,000/mo each) – spaced "ip tv" → iptv slugs
-/seo/ip-tv-anbieter /seo/iptv-anbieter 301
-/seo/ip-tv-kosten /seo/iptv-kosten 301
-/seo/ip-tv-smart /seo/smart-iptv 301
-/seo/ip-tv-streaming /seo/iptv-stream 301
-/seo/ip-tv-stick /seo/iptv-stick 301
-/seo/ip-tv-box /seo/iptv-box 301
-/seo/ip-tv-premium /seo/iptv-premium 301
-/seo/ip-tv-receiver /seo/iptv-receiver 301
-/seo/ip-tv-sky /seo/iptv-sky 301
-/seo/ip-tv-smart-tv /seo/smart-iptv 301
-/seo/ip-tv-subscription /seo/iptv-subscription 301
-/seo/ip-tv-best /seo/bester-iptv-anbieter 301
-/seo/ip-tv-kaufen /seo/iptv-kaufen 301
-/seo/ip-tv-app /seo/iptv-app 301
 
 # iptv premium 4k (5,000/mo) → iptv-4k
-/seo/iptv-premium-4k /seo/iptv-4k 301
 
 # smarters variants (5,000/mo)
-/seo/iptv-smarters-lite /seo/smarters-iptv-pro 301
-/seo/smarters-lite /seo/smarters-iptv-pro 301
-/seo/iptv-smart-pro /seo/smart-iptv 301
 
 # iptv providers / provider (500/mo)
-/seo/iptv-providers /seo/iptv-anbieter 301
-/seo/iptv-provider /seo/bester-iptv-anbieter 301
-/seo/provider-iptv /seo/bester-iptv-anbieter 301
-/seo/internet-protocol-tv-providers /seo/iptv-anbieter 301
 
 # buy / shop (500/mo)
-/seo/buy-iptv /seo/iptv-kaufen 301
-/seo/iptv-buy /seo/iptv-kaufen 301
-/seo/iptv-shop /seo/iptv-kaufen 301
-/seo/iptv-m3u-kaufen /seo/iptv-kaufen 301
 
 # packages / plans / deals (500/mo)
-/seo/iptv-packages /seo/iptv-abo 301
-/seo/iptv-plans /preise 301
-/seo/iptv-deals /seo/iptv-angebote 301
-/seo/iptv-sale /seo/iptv-angebote 301
-/seo/iptv-promotions /seo/iptv-angebote 301
 
 # premium subscription (500/mo)
-/seo/iptv-premium-subscription /seo/iptv-subscription 301
-/seo/iptv-smarters-subscription /seo/smarters-iptv-pro 301
-/seo/iptv-smarters-premium /seo/smarters-iptv-pro 301
 
 # reddit (500/mo)
-/seo/best-iptv-provider-reddit /seo/bester-iptv-anbieter 301
-/seo/reddit-best-iptv /seo/bester-iptv-anbieter 301
-/seo/iptv-reddit /seo/bester-iptv-anbieter 301
 
 # stream anbieter (50/mo)
-/seo/iptv-stream-anbieter /seo/iptv-stream 301
 
 # reseller (390/mo)
-/seo/reseller-for-iptv /seo/iptv-reseller 301
 
 # customer service (50/mo)
-/seo/iptv-customer-service /seo/iptv-service 301
 
 # lifetime (50/mo)
-/seo/iptv-lifetime /seo/iptv-abo 301
-/seo/lifetime-iptv /seo/iptv-abo 301
-/seo/iptv-m3u-1-jahr /seo/iptv-abo 301
 
 # free trial variants (50/mo)
-/seo/iptv-free-test /seo/iptv-free-trial 301
-/seo/iptv-test-24 /seo/iptv-free-trial 301
-/seo/iptv-gratis-test /seo/iptv-gratis-testen 301
 
 # anbieter variants (390/mo)
-/seo/anbieteriptv /seo/iptv-anbieter 301
-/seo/anbieter-iptv /seo/iptv-anbieter 301
 
 # test line variants (390/mo)
-/seo/testline-iptv /seo/iptv-test-line 301
-/seo/iptv-line-test /seo/iptv-test-line 301
 
 # android box variants (320/mo)
-/seo/box-android-iptv /seo/iptv-android-box 301
-/seo/box-iptv-android /seo/iptv-android-box 301
-/seo/iptv-box-android /seo/iptv-android-box 301
 
 # best player variants (260/mo)
-/seo/beste-iptv-app /seo/iptv-app 301
-/seo/best-player-iptv /seo/iptv-bester-player 301
-/seo/bester-iptv-player /seo/iptv-bester-player 301
 
 # m3u / playlist variants (5,000/mo)
-/seo/m3u-iptv /seo/iptv-m3u 301
-/seo/m3u-ip-tv /seo/iptv-m3u 301
-/seo/iptv-m3u8 /seo/iptv-m3u 301
 
 # subscription additional aliases (320/mo)
-/seo/iptv-sub /seo/iptv-subscription 301
-/seo/iptv-abonnement /seo/iptv-abo 301
