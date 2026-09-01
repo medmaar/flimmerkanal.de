@@ -458,3 +458,38 @@
 # m3u / playlist variants (5,000/mo)
 
 # subscription additional aliases (320/mo)
+
+# ── App/brand name keyword redirects (5,000/mo tier) ───────────────────────
+# Users searching for competitor app names → our best matching content
+/seo/siptv /seo/smart-iptv 301
+/seo/ssiptv /seo/smart-iptv 301
+/seo/set-iptv /seo/iptv-app 301
+/seo/set-ip-tv /seo/iptv-app 301
+/seo/xc-iptv /seo/iptv-xtream-codes 301
+/seo/xciptv /seo/iptv-xtream-codes 301
+/seo/flix-iptv /seo/bester-iptv-anbieter 301
+/seo/flixiptv /seo/bester-iptv-anbieter 301
+/seo/hot-iptv /seo/bester-iptv-anbieter 301
+/seo/hotiptv /seo/bester-iptv-anbieter 301
+/seo/upiptv /seo/bester-iptv-anbieter 301
+/seo/pandar-tv /seo/bester-iptv-anbieter 301
+/seo/forevertv /seo/bester-iptv-anbieter 301
+/seo/cloud-stream /seo/iptv-app 301
+
+# 500/mo keyword gaps
+/seo/iptv-world-cup /seo/iptv-bundesliga 301
+/seo/iptv-wm /seo/iptv-bundesliga 301
+/seo/iptv-vod /seo/kanaele 301
+/seo/iptv-bein-sport /seo/iptv-sport 301
+/seo/iptv-account /seo/iptv-subscription 301
+/seo/formuler-tv-box /seo/iptv-box 301
+/seo/crystal-iptv /seo/bester-iptv-anbieter 301
+/seo/crystaliptv /seo/bester-iptv-anbieter 301
+
+# 480/mo
+/seo/internet-protocol-tv /seo/was-ist-iptv 301
+/seo/ip-television /seo/was-ist-iptv 301
+
+# 390/mo
+/seo/iptv-android-app /seo/iptv-android 301
+/seo/application-iptv-android /seo/iptv-android 301
