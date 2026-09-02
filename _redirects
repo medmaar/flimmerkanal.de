@@ -56,8 +56,7 @@
 /seo/iptv-test.html /seo/iptv-test 301
 /seo/iptv-tivimate.html /seo/iptv-tivimate 301
 /seo/iptv-vs-kabel.html /seo/iptv-vs-kabel 301
-/seo/iptv-weltmeisterschaft.html /seo/iptv-bundesliga 301
-/seo/iptv-weltmeisterschaft /seo/iptv-bundesliga 301
+/seo/iptv-weltmeisterschaft.html /seo/iptv-weltmeisterschaft 301
 /seo/iptv-windows.html /seo/iptv-windows 301
 /seo/kanaele.html /seo/kanaele 301
 /seo/kodi-iptv.html /seo/kodi-iptv 301
@@ -106,9 +105,9 @@
 /plan/iptv-6-monate-8-verbindungen.html /plan/iptv-6-monate-8-verbindungen 301
 /plan/iptv-6-monate-9-verbindungen.html /plan/iptv-6-monate-9-verbindungen 301
 
-# wm-2026-iptv is now a redirect to iptv-bundesliga (301 replaces meta-refresh)
-/seo/wm-2026-iptv.html /seo/iptv-bundesliga 301
-/seo/wm-2026-iptv /seo/iptv-bundesliga 301
+# wm-2026-iptv redirects to the WM-specific page
+/seo/wm-2026-iptv.html /seo/iptv-weltmeisterschaft 301
+/seo/wm-2026-iptv /seo/iptv-weltmeisterschaft 301
 
 # new free trial page .html redirect
 /seo/iptv-free-trial.html /seo/iptv-free-trial 301
@@ -418,78 +417,3 @@
 # subscription (320/mo) – additional alias
 /seo/iptv-sub /seo/iptv-subscription 301
 /seo/iptv-abonnement /seo/iptv-abo 301
-
-# ── Missing keyword variant redirects (SEO structure alignment) ──────────────
-
-# ip tv * variants (5,000/mo each) – spaced "ip tv" → iptv slugs
-
-# iptv premium 4k (5,000/mo) → iptv-4k
-
-# smarters variants (5,000/mo)
-
-# iptv providers / provider (500/mo)
-
-# buy / shop (500/mo)
-
-# packages / plans / deals (500/mo)
-
-# premium subscription (500/mo)
-
-# reddit (500/mo)
-
-# stream anbieter (50/mo)
-
-# reseller (390/mo)
-
-# customer service (50/mo)
-
-# lifetime (50/mo)
-
-# free trial variants (50/mo)
-
-# anbieter variants (390/mo)
-
-# test line variants (390/mo)
-
-# android box variants (320/mo)
-
-# best player variants (260/mo)
-
-# m3u / playlist variants (5,000/mo)
-
-# subscription additional aliases (320/mo)
-
-# ── App/brand name keyword redirects (5,000/mo tier) ───────────────────────
-# Users searching for competitor app names → our best matching content
-/seo/siptv /seo/smart-iptv 301
-/seo/ssiptv /seo/smart-iptv 301
-/seo/set-iptv /seo/iptv-app 301
-/seo/set-ip-tv /seo/iptv-app 301
-/seo/xc-iptv /seo/iptv-xtream-codes 301
-/seo/xciptv /seo/iptv-xtream-codes 301
-/seo/flix-iptv /seo/bester-iptv-anbieter 301
-/seo/flixiptv /seo/bester-iptv-anbieter 301
-/seo/hot-iptv /seo/bester-iptv-anbieter 301
-/seo/hotiptv /seo/bester-iptv-anbieter 301
-/seo/upiptv /seo/bester-iptv-anbieter 301
-/seo/pandar-tv /seo/bester-iptv-anbieter 301
-/seo/forevertv /seo/bester-iptv-anbieter 301
-/seo/cloud-stream /seo/iptv-app 301
-
-# 500/mo keyword gaps
-/seo/iptv-world-cup /seo/iptv-bundesliga 301
-/seo/iptv-wm /seo/iptv-bundesliga 301
-/seo/iptv-vod /seo/kanaele 301
-/seo/iptv-bein-sport /seo/iptv-sport 301
-/seo/iptv-account /seo/iptv-subscription 301
-/seo/formuler-tv-box /seo/iptv-box 301
-/seo/crystal-iptv /seo/bester-iptv-anbieter 301
-/seo/crystaliptv /seo/bester-iptv-anbieter 301
-
-# 480/mo
-/seo/internet-protocol-tv /seo/was-ist-iptv 301
-/seo/ip-television /seo/was-ist-iptv 301
-
-# 390/mo
-/seo/iptv-android-app /seo/iptv-android 301
-/seo/application-iptv-android /seo/iptv-android 301
