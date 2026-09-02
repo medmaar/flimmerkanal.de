@@ -1,3 +1,9 @@
+# ── Trailing slash → canonical (no trailing slash) – fixes GSC redirect errors ──
+/seo/:slug/ /seo/:slug 301
+/plan/:slug/ /plan/:slug 301
+/legal/:slug/ /legal/:slug 301
+/:page/ /:page 301
+
 # Redirect .html URLs to clean URLs (301 permanent)
 /preise.html /preise 301
 /kostenloser-test.html /kostenloser-test 301
