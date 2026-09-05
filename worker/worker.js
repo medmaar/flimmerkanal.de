@@ -12,6 +12,7 @@ const ADMIN_EMAIL = "kontakt@flimmerkanal.de";
 const SITE_URL    = "https://flimmerkanal.de";
 const PACK_NAME   = "Germany";
 const WA_NUMBER   = "17828026280";
+const SITE_NAME   = "flimmerkanal.de";
 const DARK        = "#0a0414";
 const RED         = "#fd0322";
 
@@ -224,6 +225,7 @@ function adminEmail(name, email, country, device, whatsapp, notes, username, pas
 }
 
 async function handleFetch(request, env) {
+  const RESEND_KEY = env.RESEND_KEY;
   if (request.method === "OPTIONS") {
     return new Response(null, { headers: {
       "Access-Control-Allow-Origin": "*",
@@ -231,15 +233,19 @@ async function handleFetch(request, env) {
       "Access-Control-Allow-Headers": "Content-Type",
     }});
   }
+
   if (request.method === "GET") {
     const u = new URL(request.url);
     if (u.searchParams.has("debug")) {
       const bq = await apiGet({ action: "bouquet" });
-      const trials = await env.TRIALS.list();
+      const _kr = await env.TRIALS.get('__keys__') || '[]';
+      const _ke = JSON.parse(_kr);
+      const trials = { keys: _ke.map(e => ({ name: 'trial:' + e })) };
       return jsonRes({ bouquet: bq.text.slice(0,400), kv_keys: trials.keys.length });
     }
     return new Response("FlimmerKanal Trial Worker — OK", { status: 200 });
   }
+
   if (request.method !== "POST") return jsonRes({ success: false, error: "POST only" }, 405);
 
   let body;
@@ -263,10 +269,10 @@ async function handleFetch(request, env) {
     step = "create_demo";
     const crRes = await apiGet({
       action: "new", type: "m3u", sub: "99", pack: packId,
-      note: `Trial / flimmerkanal.de / ${email} | ${whatsapp || ""}`,
+      note: `Trial / ${SITE_NAME} / ${email} | ${whatsapp || ""}`,
     });
     if (!crRes.text.trim().startsWith("[") && !crRes.text.trim().startsWith("{")) {
-      throw new Error(`Panel kein JSON: ${crRes.text.slice(0, 200)}`);
+      throw new Error(`Panel non-JSON: ${crRes.text.slice(0, 200)}`);
     }
     const crData = JSON.parse(crRes.text);
     const item = Array.isArray(crData) ? crData[0] : crData;
@@ -280,33 +286,50 @@ async function handleFetch(request, env) {
     try { const u = new URL(rawUrl); username = u.searchParams.get("username") || ""; password = u.searchParams.get("password") || ""; } catch {}
     const m3uUrl = `${HOST}/get.php?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&type=m3u_plus&output=ts`;
 
-    step = "email_client";
-    await sendEmail(email, "Ihr FlimmerKanal Testzugang ist bereit – 24h Gratis aktiviert ✓", welcomeEmail(name, username, password, m3uUrl), env.RESEND_KEY);
-
-    step = "email_admin";
-    await sendEmail(ADMIN_EMAIL, `Automation / flimmerkanal.de / trial / ${name || "—"} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), env.RESEND_KEY);
-
+    // ── Store in KV FIRST (so trial is always recorded even if email fails) ──
     step = "kv_store";
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     await env.TRIALS.put(
       `trial:${email}`,
-      JSON.stringify({ name, email, username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false }),
-      { expirationTtl: 4 * 24 * 60 * 60 }
+      JSON.stringify({ name, email, whatsapp, phone: whatsapp, site: SITE_NAME, username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, created_at: Date.now() }),
+      { expirationTtl: 30 * 24 * 60 * 60 }
     );
+    // Update __keys__ index (read op, not list op — keeps KV list quota safe)
+    try {
+      const _existingKeys = JSON.parse(await env.TRIALS.get('__keys__') || '[]');
+      if (!_existingKeys.includes(email)) {
+        _existingKeys.push(email);
+        await env.TRIALS.put('__keys__', JSON.stringify(_existingKeys), { expirationTtl: 90 * 24 * 60 * 60 });
+      }
+    } catch(_) {}
+
+    // ── Send emails (after KV so trial is always recorded) ──
+    step = "email_client";
+    await sendEmail(email, "Ihr FlimmerKanal Testzugang ist bereit – 24h Gratis aktiviert ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
+
+    step = "email_admin";
+    await sendEmail(ADMIN_EMAIL, `Automation / ${SITE_NAME} / trial / ${name || "—"} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), RESEND_KEY);
 
     return jsonRes({ success: true });
 
   } catch (err) {
     console.error(`[step=${step}]`, err.message);
+    // If only email failed (kv already saved), still return success with a warning
+    if (step === "email_client" || step === "email_admin") {
+      return jsonRes({ success: true, warning: `email_failed: ${err.message}` });
+    }
     return jsonRes({ success: false, error: `[${step}] ${err.message}` }, 500);
   }
 }
 
 async function handleScheduled(env) {
+  const RESEND_KEY = env.RESEND_KEY;
   const now = Date.now();
   const FOUR_HOURS = 4 * 60 * 60 * 1000;
-  const { keys } = await env.TRIALS.list({ prefix: "trial:" });
-  console.log(`[cron] ${keys.length} Tests geprüft`);
+  const _keysRaw = await env.TRIALS.get('__keys__') || '[]';
+  const _keyEmails = JSON.parse(_keysRaw);
+  const keys = _keyEmails.map(e => ({ name: `trial:${e}` }));
+  console.log(`[cron] ${keys.length} trials checked`);
 
   for (const { name: key } of keys) {
     let trial;
@@ -315,20 +338,20 @@ async function handleScheduled(env) {
 
     if (!reminder_sent && now >= expiry - FOUR_HOURS && now < expiry) {
       try {
-        await sendEmail(email, "⏳ Ihr FlimmerKanal Testzugang läuft in 4 Stunden ab", reminderEmail(name, username, password, m3uUrl), env.RESEND_KEY);
+        await sendEmail(email, "⏳ Ihr FlimmerKanal Testzugang läuft in 4 Stunden ab", reminderEmail(name, username, password, m3uUrl), RESEND_KEY);
         trial.reminder_sent = true;
-        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 4 * 24 * 60 * 60 });
-        console.log(`[cron] Erinnerung → ${email}`);
-      } catch (e) { console.error(`[cron] Fehler Erinnerung:`, e.message); }
+        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
+        console.log(`[cron] Reminder → ${email}`);
+      } catch (e) { console.error(`[cron] Reminder failed:`, e.message); }
     }
 
     if (!followup_sent && now >= expiry) {
       try {
-        await sendEmail(email, "Ihr FlimmerKanal Testzugang ist abgelaufen — Jetzt weiterschauen 🎬", followupEmail(name), env.RESEND_KEY);
+        await sendEmail(email, "Ihr FlimmerKanal Testzugang ist abgelaufen — Jetzt weiterschauen 🎬", followupEmail(name), RESEND_KEY);
         trial.followup_sent = true;
-        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 4 * 24 * 60 * 60 });
-        console.log(`[cron] Nachfass → ${email}`);
-      } catch (e) { console.error(`[cron] Fehler Nachfass:`, e.message); }
+        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
+        console.log(`[cron] Follow-up → ${email}`);
+      } catch (e) { console.error(`[cron] Follow-up failed:`, e.message); }
     }
   }
 }
@@ -337,6 +360,3 @@ export default {
   async fetch(request, env) { return handleFetch(request, env); },
   async scheduled(event, env, ctx) { ctx.waitUntil(handleScheduled(env)); },
 };
-
-
-
