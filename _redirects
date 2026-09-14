@@ -423,3 +423,5 @@
 # subscription (320/mo) – additional alias
 /seo/iptv-sub /seo/iptv-subscription 301
 /seo/iptv-abonnement /seo/iptv-abo 301
+# Root-level alias → canonical SEO page
+/iptv-anbieter /seo/iptv-anbieter 301

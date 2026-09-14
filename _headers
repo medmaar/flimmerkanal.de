@@ -52,3 +52,16 @@
 
 /llms.txt
   Cache-Control: public, max-age=3600
+
+# Prevent .html duplicate URLs from being indexed (clean URLs are canonical)
+/seo/*.html
+  X-Robots-Tag: noindex, follow
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/plan/*.html
+  X-Robots-Tag: noindex, follow
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/*.html
+  X-Robots-Tag: noindex, follow
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
