@@ -45,10 +45,6 @@ async function sendEmail(to, subject, html, resendKey, inReplyTo = null) {
   if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
   const data = await res.json();
   return data.id || null;
-}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: FROM_EMAIL, to, subject, html }),
-  });
-  if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
 }
 
 function emailWrap(content) {
@@ -282,7 +278,7 @@ async function handleFetch(request, env) {
     step = "create_demo";
     const crRes = await apiGet({
       action: "new", type: "m3u", sub: "99", pack: packId,
-      note: `Trial / ${SITE_NAME} / ${email} | ${whatsapp || ""}`,
+      notes: `Trial / ${SITE_NAME} / ${email} | ${whatsapp || ""}`,
     });
     if (!crRes.text.trim().startsWith("[") && !crRes.text.trim().startsWith("{")) {
       throw new Error(`Panel non-JSON: ${crRes.text.slice(0, 200)}`);
@@ -304,7 +300,7 @@ async function handleFetch(request, env) {
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     await env.TRIALS.put(
       `trial:${email}`,
-      JSON.stringify({ name, email, whatsapp, phone: whatsapp, site: SITE_NAME, username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: welcomeEmailId || null, created_at: Date.now() }),
+      JSON.stringify({ name, email, whatsapp, phone: whatsapp, site: SITE_NAME, username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: null, created_at: Date.now() }),
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
     // Update __keys__ index (read op, not list op — keeps KV list quota safe)
@@ -319,6 +315,13 @@ async function handleFetch(request, env) {
     // ── Send emails (after KV so trial is always recorded) ──
     step = "email_client";
     const welcomeEmailId = await sendEmail(email, "Ihr FlimmerKanal Testzugang ist bereit – 24h Gratis aktiviert ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
+    if (welcomeEmailId) {
+      try {
+        const _t = JSON.parse(await env.TRIALS.get(`trial:${email}`) || '{}');
+        _t.welcome_email_id = welcomeEmailId;
+        await env.TRIALS.put(`trial:${email}`, JSON.stringify(_t), { expirationTtl: 30 * 24 * 60 * 60 });
+      } catch (_) {}
+    }
 
     step = "email_admin";
     await sendEmail(ADMIN_EMAIL, `Automation / ${SITE_NAME} / trial / ${name || "—"} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), RESEND_KEY);
