@@ -49,3 +49,4 @@ echo "== Unknown URL must return 404 (no soft-404 homepage fallback)"
 code=$(curl -s -o /dev/null -w '%{http_code}' "$BASE/this-page-does-not-exist-xyz")
 echo "  $code"; [ "$code" = 404 ] || fail=1
 echo "== done (fail=$fail)"
+exit $fail
