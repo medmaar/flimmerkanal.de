@@ -36,4 +36,16 @@ while read -r u; do
   grep -qi noindex <<<"$robots $xr" && bad="$bad noindex"
   [ -n "$bad" ] && { echo "  BAD $u:$bad"; fail=1; }
 done < /tmp/locs
+echo "== _redirects rules (each static rule must 301 straight to its target)"
+grep -vE '^\s*(#|$)' _redirects | awk '$1 !~ /[:*]/ {print NR, $1, $2}' > /tmp/rules
+applied=0; missed=0
+while read -r n src dst; do
+  read -r code loc < <(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "$BASE$src")
+  if [ "$code" = 301 ] && [ "$loc" = "$BASE$dst" ]; then applied=$((applied+1)); else missed=$((missed+1)); echo "  NOT APPLIED $src -> $dst (got $code $loc)"; fail=1; fi
+done < /tmp/rules
+echo "  applied=$applied missed=$missed"
+
+echo "== Unknown URL must return 404 (no soft-404 homepage fallback)"
+code=$(curl -s -o /dev/null -w '%{http_code}' "$BASE/this-page-does-not-exist-xyz")
+echo "  $code"; [ "$code" = 404 ] || fail=1
 echo "== done (fail=$fail)"
