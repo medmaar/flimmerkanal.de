@@ -1,0 +1,17 @@
+name: SEO live check
+
+on:
+  push:
+    branches: [main, 'claude/**']
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for Cloudflare Pages deploy
+        if: github.ref == 'refs/heads/main'
+        run: sleep 150
+      - name: Check live site
+        run: bash scripts/check-live.sh https://flimmerkanal.de
