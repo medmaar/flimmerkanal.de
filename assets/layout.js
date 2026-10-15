@@ -31,6 +31,7 @@
     '    <a href="/"'             + (isActive('/index.html')               ? ' class="active"' : '') + '>Startseite</a>',
     '    <a href="/preise"'            + (isActive('/preise')              ? ' class="active"' : '') + '>Preise</a>',
     '    <a href="/wie-es-funktioniert"' + (isActive('/wie-es-funktioniert') ? ' class="active"' : '') + '>So geht\'s</a>',
+    '    <a href="/freunde-werben"'    + (isActive('/freunde-werben')      ? ' class="active"' : '') + '>Freunde werben</a>',
     '    <a href="/ueber-uns"'         + (isActive('/ueber-uns')           ? ' class="active"' : '') + '>Über uns</a>',
     '    <a href="/kostenloser-test" class="fk-nav-cta">Kostenlos testen</a>',
     '  </div>',
@@ -43,6 +44,7 @@
     '  <a href="/preise">Preise</a>',
     '  <a href="/wie-es-funktioniert">So geht\'s</a>',
     '  <a href="/ueber-uns">Über uns</a>',
+    '  <a href="/freunde-werben">Freunde werben · 6 Monate gratis</a>',
     '  <a href="/kontakt">Kontakt</a>',
     '  <a href="/kostenloser-test" class="fk-nav-cta">Kostenlos testen</a>',
     '</div>'
@@ -82,6 +84,7 @@
     '          <h5>Unternehmen</h5>',
     '          <a href="/ueber-uns">Über uns</a>',
     '          <a href="/kontakt">Kontakt</a>',
+    '          <a href="/freunde-werben">Freunde werben</a>',
     '          <a href="' + WA_BASE + 'Hallo%2C+ich+interessiere+mich+f%C3%BCr+FlimmerKanal" target="_blank" rel="noopener">WhatsApp Support</a>',
     '        </div>',
     '        <div class="fk-footer-col">',
