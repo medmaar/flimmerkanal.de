@@ -29,13 +29,13 @@
 
   var CSS =
     ".fk-celebrating,.fk-celebrating body{overflow:hidden}" +
-    ".fk-cel{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;padding:16px;overflow-y:auto;font-family:var(--font,'Plus Jakarta Sans',sans-serif);" +
+    ".fk-cel-hide{display:none!important}" +
+    ".fk-cel{position:fixed;inset:0;z-index:100000;display:flex;flex-direction:column;align-items:center;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;" +
+    "padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));font-family:var(--font,'Plus Jakarta Sans',sans-serif);" +
     "background:radial-gradient(circle at 50% 35%,rgba(34,197,94,.22),transparent 60%),rgba(10,4,20,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);animation:fkc-in .3s ease both}" +
     ".fk-cel.is-out{animation:fkc-out .25s ease forwards}" +
-    ".fk-cel-box{position:relative;box-sizing:border-box;width:min(560px,100%);text-align:center;padding:clamp(28px,6vw,48px) clamp(18px,5vw,40px);background:#140c20;" +
+    ".fk-cel-box{position:relative;box-sizing:border-box;width:100%;max-width:560px;margin:auto;flex-shrink:0;text-align:center;padding:clamp(28px,6vw,48px) clamp(18px,5vw,40px);background:#140c20;" +
     "border:1px solid rgba(34,197,94,.45);border-radius:20px;box-shadow:0 0 0 1px rgba(34,197,94,.2),0 40px 120px -30px rgba(34,197,94,.45);animation:fkc-pop .55s .05s cubic-bezier(.2,.9,.3,1.3) both}" +
-    ".fk-cel-x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.06);color:rgba(232,224,255,.65);font-size:28px;line-height:1;cursor:pointer}" +
-    ".fk-cel-x:hover,.fk-cel-x:focus-visible{color:#fff;background:rgba(255,255,255,.12)}" +
     ".fk-cel-mark{display:block;width:clamp(130px,38vw,180px);height:auto;margin:0 auto 22px;fill:none;stroke:#4ade80;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 24px rgba(74,222,128,.5))}" +
     ".fk-cel-mark circle{stroke-width:6;stroke-dasharray:340;stroke-dashoffset:340;fill:rgba(34,197,94,.1);animation:fkc-draw .7s .2s ease forwards}" +
     ".fk-cel-mark path{stroke-width:9;stroke-dasharray:80;stroke-dashoffset:80;transform-origin:center;animation:fkc-draw .45s .8s ease forwards,fkc-bounce .5s 1.2s ease}" +
@@ -55,22 +55,27 @@
     "@keyframes fkc-draw{to{stroke-dashoffset:0}}" +
     "@keyframes fkc-bounce{50%{transform:scale(1.15)}}" +
     "@keyframes fkc-fall{from{transform:translateY(0) rotate(var(--r))}to{transform:translateY(110vh) rotate(calc(var(--r) + 540deg))}}" +
+    "@media (max-height:700px){.fk-cel-mark{width:100px;margin-bottom:14px}.fk-cel h2{margin-bottom:12px}}" +
+    "@media (max-width:360px){.fk-cel-box{padding:24px 14px}.fk-cel h2{font-size:24px}.fk-cel p{font-size:15px}}" +
+    "@media (max-height:560px){.fk-cel-mark{width:84px;margin-bottom:12px}.fk-cel h2{font-size:24px;margin-bottom:10px}.fk-cel p{font-size:15px;margin-bottom:8px}.fk-cel-go{margin-top:10px;padding:13px}.fk-cel-box{padding:22px 20px}}" +
     "@media (prefers-reduced-motion:reduce){.fk-cel,.fk-cel-box{animation:none}.fk-cel-bits{display:none}.fk-cel-mark circle,.fk-cel-mark path{animation:none;stroke-dashoffset:0}}";
+
+  function injectCss() {
+    if (document.getElementById("fk-cel-css")) return;
+    var st = document.createElement("style");
+    st.id = "fk-cel-css";
+    st.textContent = CSS;
+    document.head.appendChild(st);
+  }
 
   var EMOJI = ["📺", "🍿", "⚽", "🎬"];
 
   function celebrate(kind, email) {
     var c = TEXT[kind];
     if (!c) return;
-    if (!document.getElementById("fk-cel-css")) {
-      var st = document.createElement("style");
-      st.id = "fk-cel-css";
-      st.textContent = CSS;
-      document.head.appendChild(st);
-    }
+    injectCss();
     var old = document.querySelector(".fk-cel");
     if (old) old.remove();
-    var back = document.activeElement;
     var el = document.createElement("div");
     el.className = "fk-cel";
     el.setAttribute("role", "dialog");
@@ -83,28 +88,19 @@
     }
     el.innerHTML = '<div class="fk-cel-bits" aria-hidden="true">' + bits + "</div>" +
       '<div class="fk-cel-box">' +
-      '<button class="fk-cel-x" type="button" aria-label="Schließen">×</button>' +
       '<svg class="fk-cel-mark" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54"/><path d="M36 62 53 79 86 44"/></svg>' +
       '<h2 id="fk-cel-title">' + c.title + "</h2>" +
       c.lines.map(function (l) { return "<p>" + l + "</p>"; }).join("") +
       '<button class="fk-cel-go" type="button">' + c.btn + "</button></div>";
     var slots = el.querySelectorAll("[data-c-email]");
     for (var j = 0; j < slots.length; j++) slots[j].textContent = email || "Ihre E-Mail-Adresse";
-    var go = el.querySelector(".fk-cel-go"), x = el.querySelector(".fk-cel-x");
-    function onKey(e) {
-      if (e.key === "Escape") close();
-      if (e.key === "Tab") { e.preventDefault(); (document.activeElement === go ? x : go).focus(); }
-    }
-    function close() {
-      document.removeEventListener("keydown", onKey);
-      el.classList.add("is-out");
-      document.documentElement.classList.remove("fk-celebrating");
-      setTimeout(function () { el.remove(); }, 250);
-      if (back && back.focus) try { back.focus({ preventScroll: true }); } catch (e) {}
-    }
-    document.addEventListener("keydown", onKey);
-    x.addEventListener("click", close);
-    go.addEventListener("click", close);
+    // No way to dismiss back to the page: the only button takes the client to the homepage.
+    var go = el.querySelector(".fk-cel-go");
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Tab") { e.preventDefault(); go.focus(); }
+      if (e.key === "Escape") e.preventDefault();
+    });
+    go.addEventListener("click", function () { location.href = "/"; });
     document.body.appendChild(el);
     document.documentElement.classList.add("fk-celebrating");
     try { go.focus({ preventScroll: true }); } catch (e) {}
@@ -119,6 +115,8 @@
       var visible = panel.style.display && panel.style.display !== "none";
       if (visible && !shown) {
         shown = true;
+        injectCss();
+        panel.classList.add("fk-cel-hide"); // never show the old plain confirmation underneath
         var input = document.getElementById(emailId);
         celebrate(kind, input ? input.value.trim() : "");
       } else if (!visible) {
