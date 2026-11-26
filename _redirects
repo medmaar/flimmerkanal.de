@@ -1,3 +1,14 @@
+# Excluded-market pages removed (SEO market filter, 2026-11-25)
+/seo/arabisches-iptv / 301
+/seo/arabisches-iptv/ / 301
+/seo/arabisches-iptv.html / 301
+/seo/kurdisches-iptv / 301
+/seo/kurdisches-iptv/ / 301
+/seo/kurdisches-iptv.html / 301
+/seo/tuerkisches-iptv / 301
+/seo/tuerkisches-iptv/ / 301
+/seo/tuerkisches-iptv.html / 301
+
 # Cloudflare Pages: every rule after the first dynamic rule (placeholder/splat)
 # counts toward the 100 dynamic-rule limit, and rules beyond it are silently
 # ignored. Keep ALL static rules above and the dynamic rules at the very end.
@@ -15,7 +26,6 @@
 /legal/impressum.html /legal/impressum 301
 /legal/widerruf.html /legal/widerruf 301
 /seo/albanisches-iptv.html /seo/albanisches-iptv 301
-/seo/arabisches-iptv.html /seo/arabisches-iptv 301
 /seo/bester-iptv-anbieter.html /seo/bester-iptv-anbieter 301
 /seo/installationsanleitung.html /seo/installationsanleitung 301
 /seo/iptv-4k.html /seo/iptv-4k 301
@@ -67,7 +77,6 @@
 /seo/kodi-iptv.html /seo/kodi-iptv 301
 /seo/smart-iptv.html /seo/smart-iptv 301
 /seo/smarters-iptv-pro.html /seo/smarters-iptv-pro 301
-/seo/tuerkisches-iptv.html /seo/tuerkisches-iptv 301
 /seo/was-ist-iptv.html /seo/was-ist-iptv 301
 /plan/iptv-1-monat-1-verbindung.html /plan/iptv-1-monat-1-verbindung 301
 /plan/iptv-1-monat-10-verbindungen.html /plan/iptv-1-monat-10-verbindungen 301
@@ -274,7 +283,6 @@
 /seo/iptv-zuerich.html /seo/iptv-zuerich 301
 /seo/iptv-zwickau.html /seo/iptv-zwickau 301
 /seo/italienisches-iptv.html /seo/italienisches-iptv 301
-/seo/kurdisches-iptv.html /seo/kurdisches-iptv 301
 /seo/polnisches-iptv.html /seo/polnisches-iptv 301
 /seo/russisches-iptv.html /seo/russisches-iptv 301
 /seo/spanisches-iptv.html /seo/spanisches-iptv 301
